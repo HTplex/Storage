@@ -1,0 +1,49 @@
+package pAssignments;
+import java.util.Scanner;
+public class Q3FloydWarshall {
+  public static void main(String[]args){
+    Scanner in=new Scanner(System.in);
+    int v=in.nextInt();
+    long [][] mins=new long[v][v];
+    long[][] cc=new long[v][v];
+    int e=in.nextInt();
+    for(int i=0;i<e;i++){
+      int a=in.nextInt();
+      int b=in.nextInt();
+      int c=in.nextInt();
+      cc[a-1][b-1]=c;
+    }
+    
+    for(int i=0;i<v;i++){
+      for(int i1=0;i1<v;i1++){
+        if(i==i1) mins[i][i1]=0;
+        else if(cc[i][i1]!=0) mins[i][i1]=cc[i][i1];
+        else mins[i][i1]=Long.MAX_VALUE/2;
+      }
+    }
+    long mm=Long.MAX_VALUE;
+    for(int k=0;k<v;k++){
+      for(int i=0;i<v;i++){
+        for(int j=0;j<v;j++){
+        
+          mins[i][j]=min(mins[i][j], mins[i][k]+mins[k][j]);
+          mm=min(mm, mins[i][j]);
+        }
+      }
+    }
+    for (long[] ls : mins) {
+      for (long l : ls) {
+        System.out.print(l+"\t");
+      }
+      System.out.println();
+    } 
+    System.out.println(mm);
+    for(int i=0;i<v;i++){
+        if(mins[i][i]<0)
+          System.out.println("OUT!");
+    }
+  }
+  public static long min(long a, long b){
+    return a<b?a:b;
+  }
+}

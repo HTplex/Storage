@@ -1,0 +1,22 @@
+package absinter;
+import java.util.*;
+import javax.swing.*;
+import java.awt.event.*;
+public class AbsA04AL {
+	public static void main(String[]args){
+		
+	}
+}
+class wbutton extends JFrame{
+	public Wbutton(){
+		JButton ok=new JButton("OK");
+		JButton nope=new JButton("NOPE");
+		
+	}
+	
+}
+class action implements ActionListener{
+	public void actionPerformed(){
+		System.out.println("VOID 1");
+	}
+}

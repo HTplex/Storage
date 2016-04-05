@@ -1,0 +1,16 @@
+package graphic;
+import java.util.Scanner;
+import java.awt.*;
+import javax.swing.*;
+
+public class GraphicA01graphic {
+	public static void main(String[]args){
+		
+	}
+}
+class tri extends JFrame{
+	protected void ppp(Graphics g){
+		super.paintComponents(g);
+	
+	}
+}

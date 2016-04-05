@@ -1,0 +1,15 @@
+package microsoft;
+import java.awt.List;
+import java.util.Scanner;
+public class BeautyA {
+  public static void main(String[]args){
+    Scanner inScanner=new Scanner(System.in);
+
+  }
+}
+class node{
+  int root;
+  List child;
+  int childrens;
+  node()
+}

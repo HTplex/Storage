@@ -1,0 +1,6 @@
+package graphic;
+import javax.swing.*;
+
+public class GraphicA02OvalButton {
+
+}

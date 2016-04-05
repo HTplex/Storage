@@ -1,0 +1,42 @@
+package multidarray;
+import java.util.Scanner;
+public class MultiDarrayB09tectactoe {
+	public static void main(String[]args){
+		Scanner input=new Scanner(System.in);
+		int [][] tec=new int [3][3];
+		char[][] tecs=new char[3][3];
+		java.util.Arrays.fill(tecs, 'a');
+		for(int i=0;i<9;i++){
+			for(int i1=0;i1<3;i1++){
+				for(int i2=0;i2<3;i2++){
+					System.out.print("|"+tecs);
+				}
+				System.out.println("|");
+			}
+	}
+	}
+	public static int ch(int[][] a){
+		int i=0;
+		for(int ii=0;ii<3;ii++){
+			if(a[ii][0]+a[ii][1]+a[ii][2]==3)
+				i=1;
+			if(a[0][ii]+a[1][ii]+a[2][ii]==3)
+				i=1;
+			}
+		if(a[0][0]+a[1][1]+a[2][2]==3)
+			i=1;
+		if(a[2][0]+a[1][1]+a[0][2]==3)
+			i=1;
+		for(int ii=0;ii<3;ii++){
+			if(a[ii][0]+a[ii][1]+a[ii][2]==-3)
+				i=-1;
+			if(a[0][ii]+a[1][ii]+a[2][ii]==-3)
+				i=-1;
+			}
+		if(a[0][0]+a[1][1]+a[2][2]==-3)
+			i=-1;
+		if(a[2][0]+a[1][1]+a[0][2]==-3)
+			i=-1;
+	return i;
+	}
+}

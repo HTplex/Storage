@@ -1,0 +1,32 @@
+package algorithm;
+import java.util.Scanner;
+public class BaaMaxSubbarray {
+	public static void main(String[]args){
+		int[] a={1,3,2,-1,-3,4,-6,4,-5};
+		int[] b=findmax(a,0,4,8);
+		System.out.println(b[0]+" "+b[1]+" "+b[2]);
+	}
+	public static int[] findmax(int[] a,int l,int m,int h){
+		int [] re=new int[3];
+		int lowmax=-100000000;
+		int sum=0;
+		for(int i=m;i>=l;i--){
+			sum+=a[i];
+			if (lowmax<sum){
+				lowmax=sum;
+				re[0]=i;
+			}
+		}
+		sum=0;
+		int himax=-100000000;
+		for(int i=h;i>m;i--){
+			sum+=a[i];
+			if(himax<sum){
+				himax=sum;
+				re[1]=i;
+			}
+		}
+		re[2]=(lowmax+himax);
+		return re;
+	}
+}

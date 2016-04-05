@@ -1,0 +1,18 @@
+package mathod;
+import java.util.Scanner;
+public class MethodA10circularf {
+	public static void main(String[]args){
+		Scanner input=new Scanner(System.in);
+		System.out.println("please input a number");
+		double a=input.nextDouble();
+		System.out.println(Math.sin(a));
+		System.out.println(Math.cos(a));
+		System.out.println(Math.tan(a));
+		System.out.println(Math.asin(a));
+		System.out.println(Math.acos(a));
+		System.out.println(Math.atan(a));
+		System.out.println(Math.toDegrees(a));
+		System.out.println(Math.toRadians(a));
+		
+	}
+}

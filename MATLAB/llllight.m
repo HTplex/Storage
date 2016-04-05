@@ -1,0 +1,13 @@
+theta1=9;
+theta2=26;
+theta3=30;
+acc=6;
+theta=(theta1+theta2/60+theta3/3600)/180*pi;
+d=(546.1*10^(-9))/sin(theta)
+%n=0.001/300
+thetar=[[10 1 45];[9 59 0];[7 29 30]]
+thetarf=vpa((thetar(:,1)+thetar(:,2)./60+thetar(:,3)./3600)*pi/180,acc)
+lamdax=vpa((d.*sin(thetarf)),acc)
+lamda=vpa([5790;5770;4358].*10^(-10),acc)
+s=vpa(abs(lamda-lamdax),acc)
+delta=vpa(s./lamda,acc)

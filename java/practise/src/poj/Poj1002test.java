@@ -1,0 +1,10 @@
+package poj;
+import java.util.Scanner;
+public class Poj1002test {
+	public static void main(String[]args){
+	String s="310GINO";
+	
+	System.out.print(Poj1002dial.jiagang(3101010));
+
+	}
+}

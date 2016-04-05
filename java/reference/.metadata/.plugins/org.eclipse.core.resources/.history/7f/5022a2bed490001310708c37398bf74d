@@ -1,0 +1,7 @@
+package absinter;
+import java.util.Scanner;
+public class AbsA01abstract {
+	public static void main(String[]args){
+		
+	}
+}

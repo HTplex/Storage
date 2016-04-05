@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="257" key="DIALOG_WIDTH"/>
+		<item value="113" key="DIALOG_Y_ORIGIN"/>
+		<item value="894" key="DIALOG_X_ORIGIN"/>
+		<item value="411" key="DIALOG_HEIGHT"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="700" key="selection"/>
+		<list key="findhistory">
+			<item value="500"/>
+			<item value="f.add(new imag(&quot;"/>
+			<item value="center"/>
+			<item value="noki"/>
+			<item value="nokia"/>
+			<item value="key"/>
+			<item value="package string;"/>
+			<item value=" System.out.print( );break;"/>
+		</list>
+		<list key="replacehistory">
+			<item value="700"/>
+			<item value="s.se(&quot;"/>
+			<item value="center2"/>
+			<item value="noki2"/>
+			<item value="nok2"/>
+			<item value="key2"/>
+			<item value=" System.out.print(&quot;&quot;);break;"/>
+			<item value="&apos; : System.out.print(&quot;&quot;);break;"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="267" key="DIALOG_Y_ORIGIN"/>
+		<item value="452" key="DIALOG_X_ORIGIN"/>
+	</section>
+</section>

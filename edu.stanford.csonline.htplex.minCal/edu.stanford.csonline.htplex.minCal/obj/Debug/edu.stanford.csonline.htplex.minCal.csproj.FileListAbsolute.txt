@@ -1,0 +1,1 @@
+\\psf\Home\Documents\code\C#\edu.stanford.csonline.htplex.minCal\edu.stanford.csonline.htplex.minCal\bin\Debug\edu.stanford.csonline.htplex.minCal.exe.config

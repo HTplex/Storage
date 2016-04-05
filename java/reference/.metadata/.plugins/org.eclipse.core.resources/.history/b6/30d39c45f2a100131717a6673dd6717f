@@ -1,0 +1,20 @@
+package graphic;
+import java.util.sccanner;
+import javax.swing.*;
+import java.awt.*;
+public class GraphicB04ball {
+	public static void main(String[]args){
+		JFrame f=new JFrame();
+		f.add(new ddd());
+		f.setSize(200,300);
+		f.setDefaultCloseOperation(1);
+		f.setLocationRelativeTo(null);
+		f.setVisible(true);
+	}
+}
+class ddd extends JPanel{
+	protected void paintComponent(Graphics g){
+		super.paintComponent(g);
+		//g.drawLine()
+	}
+}

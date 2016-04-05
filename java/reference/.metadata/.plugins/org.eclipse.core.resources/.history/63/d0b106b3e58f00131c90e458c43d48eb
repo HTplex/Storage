@@ -1,0 +1,13 @@
+package error;
+import java.util.Scanner;
+public class ErrorA06finally {
+	public static void main(String[]args){
+		Scanner input=new Scanner(System.in);
+		int a=input.nextInt();
+		try{
+			if (a==0)
+				throw new ArithmeticException("no 0");
+		}
+		//catch(ArithmeticException())
+	}
+}

@@ -1,0 +1,42 @@
+package graphic;
+import java.util.Scanner;
+import java.awt.*;
+import javax.swing.*;
+public class GraphicA11flags {
+	public static void main(String[]args){
+		JFrame f=new JFrame();
+		f.setLayout(new GridLayout(5,5,5,5));
+		imag s=new imag();
+		s.se("D:/works/Javaworkspace/book/image/ca.gif");
+		f.add(s);
+		s.se("D:/works/Javaworkspace/book/image/china.gif");
+		f.add(s);
+		s.se("D:/works/Javaworkspace/book/image/flag3.gif");
+		f.add(s);
+		s.se("D:/works/Javaworkspace/book/image/flag4.gif");
+		f.add(s);
+		s.se("D:/works/Javaworkspace/book/image/flag5.gif");
+		f.add(s);
+		s.se("D:/works/Javaworkspace/book/image/france.gif");
+		f.setSize(600,400);
+		f.setVisible(true);
+		f.setDefaultCloseOperation(1);
+		f.setLocationRelativeTo(null);
+	}
+}
+class imag extends JPanel{
+	String s="D:/works/Javaworkspace/book/image/ca.gif";
+	private ImageIcon Imc=new ImageIcon(this.s);
+	private Image ima=Imc.getImage();
+	protected void paintComponent(Graphics a){
+		super.paintComponent(a);
+		if(ima!=null){
+			a.drawImage(ima, 0, 0, this.getWidth(), this.getHeight(),this);
+		}
+		else System.out.println("no image");
+	}
+	public void se(String s){
+		this.s=s;
+		this.repaint();
+	}
+}

@@ -1,0 +1,43 @@
+package graphic;
+import javax.swing.*;
+import java.util.*;
+import java.awt.*;
+public class GraphicB03chess {
+	public static void main(String[]args){
+		JFrame a=new JFrame();
+		a.add(new chess());
+		a.setSize(400,400);
+		a.setLocationRelativeTo(null);
+		a.setDefaultCloseOperation(1);
+		a.setVisible(true);
+		
+	}
+}
+class chess extends JPanel{
+	chess(){
+	this.setLayout(new GridLayout(8,8));
+	int a=0;
+		for(int i=0;i<64;i++){
+			if(i%2==0)
+				this.add(new wb());
+			else
+				this.add(new Bb());
+			if(a%8==7){
+				i++;
+			}
+			a++;
+		}
+	}
+}
+class wb extends JButton{
+	wb(){
+		this.setForeground(Color.WHITE);
+		this.setForeground(Color.WHITE);
+	}
+}
+class Bb extends JButton{
+	Bb(){
+		this.setForeground(Color.BLACK);
+		this.setBackground(Color.BLACK);
+	}
+}

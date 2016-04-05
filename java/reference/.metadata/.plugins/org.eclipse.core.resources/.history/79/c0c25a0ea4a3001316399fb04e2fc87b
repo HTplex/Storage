@@ -1,0 +1,47 @@
+package action;
+import java.util.Scanner;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class ActionA02anoymouscls {
+	public static void main(String[]args){
+		JFrame f=new JFrame();
+		f.add(new panel());
+		f.setSize(400, 400);
+		f.setLocationRelativeTo(null);
+		f.setDefaultCloseOperation(1);
+		f.setVisible(true);
+	}
+}
+class panel extends JPanel{
+
+	
+	class board extends JPanel{
+		String s=new String("Say something");
+		protected void paintComponent(Graphics g){
+			super.paintComponent(g);
+			g.drawString(s, 0, (int)(this.getHeight()/2));
+		}
+		public void repaint(String s){
+			this.s=s;
+			this.repaint();
+		}
+	}
+	
+	board b=new board();
+	
+	panel(){
+		JButton[] i=new JButton[10];
+		i[0].setName(1+"");
+	this.setLayout(new BorderLayout());
+	this.add(b,BorderLayout.CENTER);
+	i[0].addActionListener(new ActionListener(){
+		public void actionPerformed(ActionEvent e){
+			b.repaint(0+"");
+		}
+	});
+	this.add(i[0],BorderLayout.SOUTH);
+	}
+	
+}

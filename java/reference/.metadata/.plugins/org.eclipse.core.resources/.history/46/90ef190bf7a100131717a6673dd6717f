@@ -1,0 +1,48 @@
+package graphic;
+import java.util.*;
+import javax.swing.*;
+import java.awt.*;
+public class GraphicB04ball {
+	public static void main(String[]args){
+		JFrame f=new JFrame();
+		int[] a=new int[10];
+		for(int i=0;i<100;i++){
+			int c=4;
+			double d=Math.random();
+			for(int ii=0;ii<3;ii++){
+			int r=1-2*((int)(2*d));
+			c=+r;
+			}
+			a[c-1]++;
+		}
+		for(int i=0;i<10;i++){
+			System.out.println(a[i]);
+		}
+		f.add(new ddd(a));
+		f.setSize(640,760);
+		f.setDefaultCloseOperation(1);
+		f.setLocationRelativeTo(null);
+		f.setVisible(true);
+	}
+}
+class ddd extends JPanel{
+	int a[];
+	public ddd(int[] m){
+		a=m;
+	}
+	protected void paintComponent(Graphics g){
+		super.paintComponent(g);
+		g.drawLine(270,30,270,60);
+		g.drawLine(330,30,330,60);
+		g.drawLine(270,60,90,400);
+		g.drawLine(330,60,510,400);
+		g.drawLine(90,400,90,700);
+		g.drawLine(510,400,510,700);
+		g.drawLine(90,700,510,700);
+		g.drawLine(a[0], a[1],a[2],a[3]);
+		for(int i=0;i<6;i++){
+			g.drawLine(150+60*i, 400, 150+60*i, 700);
+		}
+		
+	}
+}

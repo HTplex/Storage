@@ -1,0 +1,45 @@
+package graphic;
+import java.awt.*;
+
+import javax.swing.*;
+public class GraphicA08MessagePanel {
+	public static void main(String[]args){
+		JFrame j=new JFrame();
+		j.setLayout(new GridLayout(8,8));
+		for(int i=125;i<189;i++){
+			Character a=new Character((char)(i));
+			String s=new String(a.toString());
+			MessagePanel m=new MessagePanel(s);
+			j.add(m);
+		}
+		j.setSize(1024, 1024);
+		j.setDefaultCloseOperation(1);
+		j.setLocationRelativeTo(null);
+		j.setVisible(true);
+	}
+}
+class MessagePanel extends JPanel{
+	private int xCoordiate;
+	private int yCoordiate;
+	private boolean centered;
+	private String message;
+	private int interval;
+	
+	int w=this.getWidth();
+	int h=this.getHeight();
+	
+	protected void paintComponent(Graphics g){
+		super.paintComponents(g);
+		FontMetrics fm=g.getFontMetrics();
+		this.xCoordiate=(int)((this.getWidth()-fm.stringWidth(this.message))/2);
+		this.yCoordiate=(int)((this.getHeight()-fm.getAscent())/2);
+		g.drawString(this.message, this.xCoordiate,this.yCoordiate);
+	}
+	
+	public MessagePanel(){
+		this.message="null";
+	}
+	public MessagePanel(String a){
+		this.message=a;
+	}
+}

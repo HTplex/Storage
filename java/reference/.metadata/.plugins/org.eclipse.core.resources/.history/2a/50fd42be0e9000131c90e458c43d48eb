@@ -1,0 +1,21 @@
+package error;
+import java.util.Scanner;
+public class ErrorB01input {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		boolean bs=true;
+	//	do{
+		//	try{
+				int a=input.nextInt();
+				int b=input.nextInt();
+		//	}
+			//catch(){
+				
+		//	}
+	//	}
+	//	while(bs);
+
+	}
+
+}

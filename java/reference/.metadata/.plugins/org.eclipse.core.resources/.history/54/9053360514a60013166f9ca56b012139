@@ -1,0 +1,41 @@
+package action;
+import java.util.Scanner;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+public class ActionA07time {
+	public static void main(String[]args){
+		JFrame f=new JFrame();
+		f.add(new movingtexts());
+		f.setSize(400, 400);
+		f.setLocationRelativeTo(null);
+		f.setDefaultCloseOperation(1);
+		f.setVisible(true);
+	}
+}
+class movingtexts extends JPanel{
+	int x=0;
+	int y=20;
+	String s="over here!";
+	public movingtexts(){
+		Timer tm=new Timer(1,new TMLS());
+		tm.start();
+	}
+	protected void paintComponent(Graphics g){
+		super.paintComponent(g);
+		g.drawString(s, x, y);
+		if(x>this.getWidth()){
+			x=0;
+			y+=20;
+		}
+		x++;
+		if(y>this.getHeight()){
+			y=0;
+		}
+	}
+	public class TMLS implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			repaint();
+		}
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;C303D.java&apos; to &apos;codeforces.C0283C2.java&apos;&#x0A;- Original project: &apos;contest&apos;&#x0A;- Destination element: &apos;codeforces.C0283C2.java&apos;&#x0A;- Original element: &apos;templets.C303D.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;codeforces{C0283C2.java" element1="/src&lt;templets{C303D.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1432906711511" units="1" version="1.0"/>
+</session>

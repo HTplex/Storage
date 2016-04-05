@@ -1,0 +1,41 @@
+package poj;
+import java.util.Scanner;
+public class Poj1002dial {
+	public static void main(String[]args){
+		Scanner input=new Scanner(System.in);
+		int n=input.nextInt();
+		String[] s=new String[n];
+		for(int i=0;i<n;i++){
+			s[i]=input.next();
+		}
+		//System.out.println(min(s[0]));
+		
+		
+	}
+	public static String min(String b){
+		StringBuilder s=new StringBuilder();
+		String sx;
+		char[] c=b.toCharArray();
+		for(int i=0;i<b.length();i++){
+			if(c[i]!='-'){
+				s.append(c[i]);
+			}
+		}
+		sx=s.toString();
+		return sx;
+	}
+	//public static int tonumber(String s){
+		
+	//}
+	public static int chartonumber(char c){
+		int out;
+		int i=(int)(c);
+		if(i<82){
+			out=(int)((i-65)/3)+2;
+		}
+		else{
+			out=(int)((i-66)/3)+2;
+		}
+		return out;
+	}
+}

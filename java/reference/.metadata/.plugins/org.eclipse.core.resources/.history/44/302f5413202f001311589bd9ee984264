@@ -1,0 +1,8 @@
+package loop;
+import java.util.Scanner;
+public class He {
+	public static void main(Scanner[]args){
+		for (int a=0;a<10;a++)
+			System.out.print(a);
+			}
+}

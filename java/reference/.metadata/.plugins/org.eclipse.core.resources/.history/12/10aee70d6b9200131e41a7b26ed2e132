@@ -1,0 +1,10 @@
+package absinter;
+import java.util.Scanner;
+public class AbsA06number {
+	public static void main(String[]args){
+		System.out.println("biggest int\t"+Integer.MAX_VALUE);
+		System.out.println("biggest double\t"+Double.MAX_VALUE);
+		System.out.println("biggest short\t"+Short.MAX_VALUE);
+		System.out.println("biggest long\t"+Long.MAX_VALUE);
+	}
+}

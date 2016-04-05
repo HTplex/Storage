@@ -1,0 +1,171 @@
+
+public class CopyOfBouncionBalls {
+	public static void main(String[]args){
+		//int N=StdIn.readInt();
+		Ball[] a=new Ball[100];
+		for(int i=0;i<100;i++){
+			a[i]=new Ball();
+			a[i].RandomBall(a[i]);
+		}
+		while(true){
+			StdDraw.clear();
+			for(int i=0;i<100;i++){
+			a[i].move(0.01);
+			a[i].draw();
+			}
+			StdDraw.show(50);
+		}
+	}
+}
+class Ball{
+	private double Lx, Ly;
+	private double Vx, Vy;
+	private final double radius;
+	Ball(double lx, double ly, double vx, double vy,double r){
+		this.setPosition(lx, ly);
+		this.setVelocity(vx, vy);
+		this.radius=r;
+	}
+	Ball(){
+		this.radius=0.01;
+	}
+	
+//	public void CalcCTime()
+	
+	public void RandomBall(Ball a){
+		a.setPosition(a.radius+Math.random()*(1-2*radius),
+						a.radius+Math.random()*(1-2*radius));
+		a.setVelocity(Math.random()*2-1.0, Math.random()*2-1.0);
+	}
+	public void move(double dt){
+		if(Lx+dt*Vx<radius||Lx+dt*Vx>1.0-radius) Vx*=-1;
+		if(Ly+dt*Vy<radius||Ly+dt*Vy>1.0-radius) Vy*=-1;
+			Lx+=dt*Vx;
+			Ly+=dt*Vy;
+	}
+	
+	public void setPosition(double x, double y){
+		this.Lx=x;
+		this.Ly=y;
+	}
+	
+	public void setVelocity(double x, double y){
+		this.Vx=x;
+		this.Vy=y;
+	}
+	
+	public void draw(){
+		StdDraw.filledCircle(this.Lx, this.Ly, this.radius);
+	}
+}
+class partical{
+	private double Lx, Ly;
+	private double Vx, Vy;
+	private final double radius;
+	private final double mass;
+	private int count;
+	partical(double lx, double ly, double vx, double vy,double r,double m){
+		this.setPosition(lx, ly);
+		this.setVelocity(vx, vy);
+		this.radius=r;
+		this.mass=m;
+		
+	}
+	partical(){
+		this.radius=0.01;
+		this.mass=1.0;
+	}
+	public double TimeHitV(){
+		double l=(Lx-radius)/Vx;
+		double r=(1-radius-Lx)/Vx;
+		if (l>0) return l;
+		else return r;
+	}
+	public double TimeHitH(){
+		double l=(Ly-radius)/Vy;
+		double r=(1-radius-Ly)/Vy;
+		if (l>0) return l;
+		else return r;
+	}
+	public double TimeHitP(partical that){
+		double dvx=that.Vx-this.Vx;
+		double dvy=that.Vy-this.Vy;
+		double dlx=that.Lx-this.Lx;
+		double dly=that.Ly-this.Ly;
+		double tx=dlx/dvx;
+		double ty=dly/dvy;
+		if(tx==ty){
+			if(tx>0)
+			return (dlx-(this.radius+that.radius)*(Math.sqrt(dlx*dlx+dly*dly)))/dvx;
+			else return Double.MAX_VALUE;
+		}
+		else return Double.MAX_VALUE;
+	}
+//	public void CalcCTime()
+	
+	public void Random(partical a){
+		a.setPosition(a.radius+Math.random()*(1-2*radius),
+						a.radius+Math.random()*(1-2*radius));
+		a.setVelocity(Math.random()*2-1.0, Math.random()*2-1.0);
+	}
+	public void BounceV(){
+		this.Vx*=-1;
+	}
+	public void BounceH(){
+		this.Vy*=-1;
+	}
+	public void BounceP(partical that){
+		double dvx=that.Vx-this.Vx;
+		double dvy=that.Vy-this.Vy;
+		double dlx=that.Lx-this.Lx;
+		double dly=that.Ly-this.Ly;
+		double dvdr=dlx*dvx+dly*dvy;
+		double dist=this.radius+that.radius;
+		double j=2*this.mass*this.mass*dvdr/((this.mass+that.mass)*dist);
+		double jx=j*dlx/dist;
+		double jy=j*dly/dist;
+		this.Vx+=jx/this.mass;
+		this.Vy+=jy/this.mass;
+		that.Vx-=jx/that.mass;
+		that.Vy-=jy/that.mass;
+		this.count++;
+		that.count++;
+	}
+	public void move(double dt){
+		if(Lx+dt*Vx<radius||Lx+dt*Vx>1.0-radius) Vx*=-1;
+		if(Ly+dt*Vy<radius||Ly+dt*Vy>1.0-radius) Vy*=-1;
+			Lx+=dt*Vx;
+			Ly+=dt*Vy;
+	}
+	
+	public void setPosition(double x, double y){
+		this.Lx=x;
+		this.Ly=y;
+	}
+	
+	public void setVelocity(double x, double y){
+		this.Vx=x;
+		this.Vy=y;
+	}
+	
+	public void draw(){
+		StdDraw.filledCircle(this.Lx, this.Ly, this.radius);
+	}
+}
+class Event implements Comparable<Event>{
+	private double time;
+	private partical a,b;
+	private int countA, countB;
+	
+	public Event(double t,partical a, partical b){
+		this.time=t;
+		this.a=a;
+		this.b=b;
+	}
+	public int compareTo(Event that){
+		if (this.time-that.time>0) return -1;
+		else if (this.time-that.time==0) return 0;
+		else return 1;
+	}
+	public Boolean isValid(){}
+}

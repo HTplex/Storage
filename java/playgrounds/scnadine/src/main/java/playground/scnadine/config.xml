@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE config SYSTEM "http://www.matsim.org/files/dtd/config_v1.dtd"
+
+	[
+		<!ENTITY OUTBASE "output">
+		<!ENTITY INBASE  "input">
+	]
+>
+
+<config>
+
+<!-- ====================================================================== -->
+
+	<module name="global" >
+		<param name="randomSeed" value="4711" />
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="GPSPreprocess" >
+		<param name="sourcedir" value="D://Aehnlichkeiten//GPSDatenaufbereitung//GPS//GPSDaten//flamm"/> 
+		<param name="targetdir" value="D://Aehnlichkeiten//GPSDatenaufbereitung//GPS//GPSDaten//flamm"/> 
+		<param name="dataorigin" value="flamm"/>
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="GPS">		
+		<param name="sourcedir" value="D:\GPSDatenaufbereitung\GPSDaten\MGEData\testInput"/> 
+		<param name="targetdir" value="D:\GPSDatenaufbereitung\GPSDaten\MGEData\testOutput"/> 
+		<param name="processedDir" value="C:\Documents and Settings\scnadine\My Documents\GPS_Datenaufbereitung\testOutput"/>
+		<param name="unsuccessfulDir" value="C:\Documents and Settings\scnadine\My Documents\GPS_Datenaufbereitung\testOutput"/>
+		<!-- plakanda, flamm, cosim, jingmin, shuningEurisko, shuningBlueGPS, mgeFromFile, mgeFromDevice -->
+		<param name="dataorigin" value="mgeFromDevice"/>
+		<param name="filterPersons" value="false"/>
+		<param name="inputFileFilter" value="D://Aehnlichkeiten//GPSDatenaufbereitung//MapMatching//PersonsToBeFiltered.txt"/>
+			
+		<!-- Parameters Filtering and Smoothing -->
+		<param name="minNumberOfCoords" value="10"/>
+		<param name="sortGPSPoints" value="true"/>
+		<param name="useAltitudeFilter" value="true"/>
+		<param name="filterMinAltitude" value="200"/>
+		<param name="filterMaxAltitude" value="4200"/>
+		<param name="useHDOPFilter" value="false"/>
+		<param name="maxHDOP" value="10"/>
+		<param name="useVDOPFilter" value="true"/>
+		<param name="maxVDOP" value="25"/>
+		<param name="useSatelliteFilter" value="false"/>
+		<param name="minSatellites" value="4"/>
+		<param name="averageTimeStamps" value="true"/>
+		<param name="useJumpPointFilter" value="true"/>
+		<param name="speedBoundary" value="50"/>
+		<param name="randomErrorBuffer" value="30"/>
+		<param name="smoothGPSCoords" value="true"/> 
+		<!-- gauss (recommended), movingAverages, median, xSec -->		
+		<param name="smoothingType" value="gauss"/> 
+		<param name="smoothingRange" value="10"/>
+		<param name="fixedAcceleration" value="false"/>                               
+		<param name="coordDimensionsFiltering" value="3"/>
+		
+		
+		<!-- Parameters Activity and Trip Detection-->
+		<param name="coordDimensionsAnalysis" value="2"/>
+		
+		<param name="useZeroSpeeds" value="true"/>
+		<param name="zeroSpeedDefinition" value="0.01"/>
+		<param name="minZeroSpeedTime" value="60"/>
+		
+		<param name="useCoordDensity" value="true"/>
+		<param name="densityRadius" value="15"/>
+		<param name="densityCoordRange" value="20"/>
+		<param name="minDensity" value="30"/>
+		<param name="minNoPointsBetweenActivities" value="30"/>	
+		<param name="minCloudLength" value="10"/>
+		<param name="minCloudDuration" value="60"/>
+		<param name="minDensityRatio" value="0.66666666667"/>
+		
+		<param name="useDwellTime" value="true"/>
+		<param name="minDwellTime" value="120"/>
+		
+		<param name="useAccelerometer" value="true"/>
+		<param name="stdDevAccelerometerRange" value="5"/>
+		<param name="stdDevAccStopPointThreshold" value="0.5"/>
+		<param name="minNoAccTime" value="90"/>
+		<param name="stdDevAccWalkThreshold" value="7"/>
+		<param name="stdDevAccNoActivityThreshold" value="10"/>
+		
+		<param name="useHeadingChange" value="false"/>
+		<param name="headingChangeRange" value="2"/>
+		<param name="headingChangeBoundary" value="-0.9998"/>	
+		<param name="minDurationBetweenActivities" value="30"/>
+		<param name="shortActivityDuration" value="120"/>
+		<param name="longActivityDuration" value="600"/>
+		<param name="smallActivityMovement" value="50"/>
+		<param name="largeActivityMovement" value="50"/>
+
+		<!-- Parameters stopPoint detection-->
+		<param name="useModeChanges" value="true"/>
+		<param name="minDurationBetweenStopPoints" value="60"/>
+		<param name="minStopPointDuration" value="60"/>
+			
+		
+		<!-- Parameters Segment Detection-->
+		<param name="speedBoundaryMTPs" value="3"/>
+		<param name="maxAvWalkingSpeed" value="2"/>
+		<param name="accelerationBoundaryMTPs" value="0.1"/>
+		<param name="minGapLength" value="120"/>
+		<param name="minDurationWalkingStage" value="60"/>
+		<param name="minDurationOtherStage" value="120"/>
+
+	
+		<!-- Parameters Mode Detection-->
+		<param name="useNearestStop" value="true"/>
+			
+		<param name="medSpeedWalkStart" value="0"/>
+		<param name="medSpeedWalkTopLeft" value="0"/>
+		<param name="medSpeedWalkTopRight" value="1.5"/>
+		<param name="medSpeedWalkEnd" value="2"/>
+		<param name="medSpeedLowStart" value="1.5"/>
+		<param name="medSpeedLowTopLeft" value="2"/>
+		<param name="medSpeedLowTopRight" value="4"/>
+		<param name="medSpeedLowEnd" value="5"/>
+		<param name="medSpeedMediumStart" value="4"/>
+		<param name="medSpeedMediumTopLeft" value="5"/>
+		<param name="medSpeedMediumTopRight" value="10"/>
+		<param name="medSpeedMediumEnd" value="12"/>
+		<param name="medSpeedHighStart" value="10"/>
+		<param name="medSpeedHighTopLeft" value="15"/>
+		<param name="medSpeedHighTopRight" value="100"/>
+		<param name="medSpeedHighEnd" value="100"/>
+		
+		<param name="ninetyFiveAccLowStart" value="0"/>
+		<param name="ninetyFiveAccLowTopLeft" value="0"/>
+		<param name="ninetyFiveAccLowTopRight" value="0.5"/>
+		<param name="ninetyFiveAccLowEnd" value="0.6"/>
+		<param name="ninetyFiveAccMediumStart" value="0.5"/>
+		<param name="ninetyFiveAccMediumTopLeft" value="0.7"/>
+		<param name="ninetyFiveAccMediumTopRight" value="1"/>
+		<param name="ninetyFiveAccMediumEnd" value="1.2"/>
+		<param name="ninetyFiveAccHighStart" value="1"/>
+		<param name="ninetyFiveAccHighTopLeft" value="1.5"/>
+		<param name="ninetyFiveAccHighTopRight" value="25"/>
+		<param name="ninetyFiveAccHighEnd" value="25"/>	
+		
+		<param name="ninetyFiveSpeedLowStart" value="0"/>
+		<param name="ninetyFiveSpeedLowTopLeft" value="0"/>
+		<param name="ninetyFiveSpeedLowTopRight" value="9"/>
+		<param name="ninetyFiveSpeedLowEnd" value="11"/>
+		<param name="ninetyFiveSpeedMediumStart" value="10"/>
+		<param name="ninetyFiveSpeedMediumTopLeft" value="12"/>
+		<param name="ninetyFiveSpeedMediumTopRight" value="15"/>
+		<param name="ninetyFiveSpeedMediumEnd" value="18"/>
+		<param name="ninetyFiveSpeedHighStart" value="15"/>
+		<param name="ninetyFiveSpeedHighTopLeft" value="20"/>
+		<param name="ninetyFiveSpeedHighTopRight" value="100"/>
+		<param name="ninetyFiveSpeedHighEnd" value="100"/>
+		
+		<param name="medAccLowStart" value="0"/>
+		<param name="medAccLowTopLeft" value="0"/>
+		<param name="medAccLowTopRight" value="0.1"/>
+		<param name="medAccLowEnd" value="0.13"/>
+		<param name="medAccMediumStart" value="0.1"/>
+		<param name="medAccMediumTopLeft" value="0.14"/>
+		<param name="medAccMediumTopRight" value="0.15"/>
+		<param name="medAccMediumEnd" value="0.3"/>
+		<param name="medAccHighStart" value="0.16"/>
+		<param name="medAccHighTopLeft" value="0.3"/>
+		<param name="medAccHighTopRight" value="25"/>
+		<param name="medAccHighEnd" value="25"/>	
+		
+		<param name="distanceSquareNearestStopLowStart" value="0"/>
+		<param name="distanceSquareNearestStopLowTopLeft" value="0"/>
+		<param name="distanceSquareNearestStopLowTopRight" value="4000"/>
+		<param name="distanceSquareNearestStopLowEnd" value="10000"/>
+		<param name="distanceSquareNearestStopHighStart" value="5000"/>
+		<param name="distanceSquareNearestStopHighTopLeft" value="15000"/>
+		<param name="distanceSquareNearestStopHighTopRight" value="1.7976931348623157E308"/>
+		<param name="distanceSquareNearestStopHighEnd" value="1.7976931348623157E308"/>
+		
+		<param name="medStdDevAccelerometerVeryLowStart" value="0"/>
+		<param name="medStdDevAccelerometerVeryLowTopLeft" value="0"/>
+		<param name="medStdDevAccelerometerVeryLowTopRight" value="1.5"/>
+		<param name="medStdDevAccelerometerVeryLowEnd" value="2"/>
+		<param name="medStdDevAccelerometerLowStart" value="1.5"/>
+		<param name="medStdDevAccelerometerLowTopLeft" value="2"/>
+		<param name="medStdDevAccelerometerLowTopRight" value="4"/>
+		<param name="medStdDevAccelerometerLowEnd" value="5"/>
+		<param name="medStdDevAccelerometerMediumStart" value="4"/>
+		<param name="medStdDevAccelerometerMediumTopLeft" value="5"/>
+		<param name="medStdDevAccelerometerMediumTopRight" value="6"/>
+		<param name="medStdDevAccelerometerMediumEnd" value="10"/>
+		<param name="medStdDevAccelerometerHighStart" value="7"/>
+		<param name="medStdDevAccelerometerHighTopLeft" value="10"/>
+		<param name="medStdDevAccelerometerHighTopRight" value="100"/>
+		<param name="medStdDevAccelerometerHighEnd" value="100"/>
+		
+		<param name="numberOfFuzzyRules" value="18"/>
+		<param name="rule0" value="if medSpeed is walk and medStdDevAccelerometer is high then mode is walk"/>
+		<param name="rule1" value="if medSpeed is walk and medStdDevAccelerometer is medium then mode is bike"/>
+		<param name="rule2" value="if medSpeed is walk and medStdDevAccelerometer is low then mode is bike"/>
+		<param name="rule3" value="if medSpeed is walk and medStdDevAccelerometer is veryLow then mode is rail"/>
+		<param name="rule4" value="if medSpeed is low and medStdDevAccelerometer is high then mode is walk"/>
+		<param name="rule5" value="if medSpeed is low and medStdDevAccelerometer is medium then mode is bike"/>
+		<param name="rule6" value="if medSpeed is low and medStdDevAccelerometer is low then mode is car"/>
+		<param name="rule7" value="if medSpeed is low and medStdDevAccelerometer is veryLow then mode is urbanPuT"/>
+		<param name="rule8" value="if medSpeed is medium and medStdDevAccelerometer is high then mode is bike"/>
+		<param name="rule9" value="if medSpeed is medium and medStdDevAccelerometer is medium then mode is bike"/>
+		<param name="rule10" value="if medSpeed is medium and medStdDevAccelerometer is low and distanceSquareNearestStop is low then mode is urbanPuT"/>
+		<param name="rule11" value="if medSpeed is medium and medStdDevAccelerometer is low and distanceSquareNearestStop is high then mode is car"/>
+		<param name="rule12" value="if medSpeed is medium and medStdDevAccelerometer is veryLow then mode is urbanPuT"/>
+		<param name="rule13" value="if medSpeed is medium and ninetyFiveSpeed is high then mode is car"/>
+		<param name="rule14" value="if medSpeed is high and medStdDevAccelerometer is high then mode is car"/>
+		<param name="rule15" value="if medSpeed is high and medStdDevAccelerometer is medium then mode is car"/>
+		<param name="rule16" value="if medSpeed is high and medStdDevAccelerometer is low then mode is car"/>
+		<param name="rule17" value="if medSpeed is high and medStdDevAccelerometer is veryLow then mode is rail"/>
+		
+		
+		<!-- Parameters Correct Mode Chains-->
+		<param name="modes" value="walk,bike,car,urbanPuT,rail"/>
+		<param name="joinStages" value="true"/>		
+		<param name="evaluateMZ2005" value="false"/>
+		<param name="sourceModeChainsMZ2005" value="D://Aehnlichkeiten//GPSDatenaufbereitung//GPS//GPSDaten//ModeChains//MZ2005_Stages_all.txt"/>
+		<param name="correctModeTransitions" value="false"/>		
+		<param name="correctMapMatching" value="false"/>
+		
+		<!-- Parameters MapMatching-->
+		<param name="runMapMatching" value="false"/>
+		<param name="numberOfModesForMapMatching" value="1"/>
+		<param name="mapMatchingMode0" value="Car"/>
+		<param name="networkCar" value="C://Documents and Settings//scnadine//My Documents//GPS_Datenaufbereitung//Netze//navtec_ch//network.xml.gz"/>
+		<param name="networkBike" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//Netze//Gianluca//matsimNetwork//network.xml.gz"/>
+		<param name="initialSearchRadius" value="750"/>
+		<param name="minNumberOfStartNodes" value="25"/>
+		<param name="searchRadiusIncrement" value="100"/>
+		<param name="maxNumberOfCandidates" value="35"/>
+		<param name="candidateReductionRate" value="50"/> <!-- gives the number of processed GPS points after which number of candidates is reduced by 1-->
+		<param name="minNumberOfCandidates" value="15"/>
+		<param name="minNumberOfCoordsPerSegment" value="10"/>		
+		<param name="maxGapDistance" value="300"/>
+		<param name="maxGapTime" value="120"/>		
+		<param name="linkQualityThreshold" value="100"/>
+		<param name="pointQualityThreshold" value="75"/>
+		<param name="numberOfBadLinksThreshold" value="3"/>	
+		<param name="routeJoiningQualityThreshold" value="50"/>	
+					
+		<!-- Parameters Flamm comparison-->			
+		<param name="matchingBuffer" value="15000"/><!-- in milliseconds -->
+					
+					
+		<!-- Parameters Output-->
+		<param name="gpsTripWriteCoordsForGIS" value="true"/>		
+		<param name="gpsTripWriteZGPS" value="false"/>
+		<param name="numberOfWriteZGPS" value="1"/>
+		<!--modes: all, walk, bike, car, urbanPuT, rail-->
+		<param name="modeForWriteZGPS0" value="all"/>
+		<param name="useRawCoordinates" value="false"/>
+		<param name="gpsSplitZGPS" value="false"/>
+		<param name="gpsTripWriteWGS84" value="false"/>
+		<param name="gpsTripWriteStageStatistics" value="true"/>
+		<param name="gpsTripWriteDataYalcin" value="false"/>
+		<param name="gpsMinModeProbabilityYalcin" value="0.5"/> 
+		<param name="gpsTripWriteSubRoutesWithGapsForGIS" value="false"/>
+		<param name="gpsTripWriteChosenRoutesForGIS" value="false"/>
+		<param name="gpsTripWriteChosenRoutesFromMapMatching" value="false"/>
+		<param name="gpsTripWriteTripStatistics" value="true"/>
+		<param name="gpsTripWriteOutputJingmin" value="false"/>		
+		<param name="gpsTripWriteActivityStatistics" value="true"/>
+		<param name="gpsTripWritePersonStatistics" value="true"/>
+		<param name="gpTripWriteOverallStatistics" value="true"/>
+		<param name="town" value="1"/>
+
+
+		<param name="gpsWriteModeChains" value="false"/>
+		<param name="gpsWriteModeChainsMZ2005" value="false"/>
+		<param name="gpsWriteModeTransitions" value="false"/>
+		<param name="gpsWriteModeTransitionsMZ2005" value="false"/>
+		
+		<!-- Parameters Output Processing V2-->
+		<param name="gpsCoordWriteCoordsForGIS" value="false"/>
+		<param name="gpsCoordWriteCoordsFlamm" value="false"/>
+		<param name="gpsCoordWriteFlammOriginalStages" value="false"/>		
+		<param name="gpsCoordWriteCoordsForAnalysis" value="true"/>
+		<param name="gpsCoordWriteWGS84" value="false"/>
+		
+		<param name="gpsStopPointStageWriteCoordsForGIS" value="false"/>
+		<param name="gpsStopPointStageWriteAccelerometerData" value="true"/>
+		<param name="gpsStopPointStageWriteStatistics" value="true"/>
+		<param name="gpsStopPointStageWriteSubRoutesWithGapsForGIS" value="false"/>
+		<param name="gpsStopPointStageWriteChosenRoutesForGIS" value="false"/>
+		<param name="gpsStopPointStageWriteChosenRoutesFromMapMatching" value="false"/>
+		
+		<param name="gpsStopPointWriteStatistics" value="true"/>
+		<param name="gpsStopPointWriteAccelerometerData" value="false"/>
+		
+		<param name="gpsPersonWriteStatistics" value="true"/>
+		<param name="gpsPersonWriteOverallStatistics" value="true"/>
+		
+		<!-- Output Diagrams-->	
+		<param name="createAccelerometerDiagrams" value="false" />	
+		<param name="targetdirStageDiagrams" value="C:\Documents and Settings\scnadine\My Documents\GPS_Datenaufbereitung\GPSDaten\MGEData\testOutput\stageDiagrams"/>
+		<param name="targetdirStopPointDiagrams" value="C:\Documents and Settings\scnadine\My Documents\GPS_Datenaufbereitung\GPSDaten\MGEData\testOutput\stopPointDiagrams"/>
+		
+		
+
+	</module>
+	
+<!-- ====================================================================== -->
+
+	<module name="MapMatching">
+		<param name="sourcedir" value="C:\Documents and Settings\scnadine\My Documents\GPS_Datenaufbereitung\testInput"/> 
+		<param name="targetdir" value="C:\Documents and Settings\scnadine\My Documents\GPS_Datenaufbereitung\testOutput"/>
+		<!-- implemented data origins: plakanda, mapMatching -->
+		<param name="dataorigin" value="mapMatching"/>		
+		<param name="network" value="C:\Documents and Settings\scnadine\My Documents\GPS_Datenaufbereitung\Netze\navtec_ch\network.xml.gz"/>		
+		<param name="initialSearchRadius" value="750"/>
+		<param name="minNumberOfStartNodes" value="25"/>
+		<param name="searchRadiusIncrement" value="100"/>
+		<param name="maxNumberOfCandidates" value="35"/>
+		<param name="candidateReductionRate" value="50"/> <!-- gives the number of processed GPS points after which number of candidates is reduced by 1-->
+		<param name="minNumberOfCandidates" value="15"/>
+		<param name="minNumberOfCoordsPerSegment" value="10"/>		
+		<param name="maxGapDistance" value="300"/>
+		<param name="maxGapTime" value="120"/>		
+		<param name="linkQualityThreshold" value="100"/>
+		<param name="pointQualityThreshold" value="75"/>
+		<param name="numberOfBadLinksThreshold" value="3"/>	
+		<param name="routeJoiningQualityThreshold" value="50"/>	
+	</module>	
+
+<!-- ====================================================================== -->
+
+	<module name="GPSProcessResultsMapMatching">				
+		<param name="sourceDirGPS" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//GPS//ResultsMapMatching//smoothedCoords"/>
+		<param name="sourceDirMatchedLinks" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//GPS//ResultsMapMatching//matchedLinksSmoothed"/>
+		<param name="sourceFileNetworkLinks" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//GPS//ResultsMapMatching//navteqCH.txt"/>		
+		<param name="network" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//Netze//navtec_ch//network.xml.gz"/>
+		<param name="directedNetwork" value="true"/>
+		<param name="gapFillingProcedure" value="shortestPath"/>
+		<param name="appendOutput" value="false"/>
+		<param name="targetDirStages" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//GPS//ResultsMapMatching"/>
+	</module>
+	
+<!-- ====================================================================== -->
+
+	<module name="DrawODsForChoiceSetGeneration" >
+		<param name="sourceDir" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//MapMatching//chosenRoutesCar_all" />		
+		<param name="network" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//Netze//navtec_ch//network.xml.gz"/>
+		<param name="sourceFileRoadType" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//Netze//navtec_ch//RoadTypes.txt"/>	
+		<param name="distanceForDensity" value="200"/>
+		<param name="densityThreshold" value="15"/>
+		<param name="randomSeed" value="4711" />
+		<param name="targetFileRouteCharacteristics" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//drawOds//output//routeCharacteristics_applicationSample.txt" />
+		<param name="targetFileODSample" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//drawOds//output//applicationSample.txt" />
+		<param name="sampleSize" value="250" />
+		<param name="filterStages" value="true"/>
+		<param name="inputStageFilter" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//ChoiceSetGeneration//oDSample_1500.txt"/>
+					
+	</module>
+
+<!-- ====================================================================== -->
+
+
+	<module name="GPSChoiceSetGeneration">		
+		
+		<!-- Choice set generation -->
+		
+		<param name="sourceDirChosenRoutes" value="F:\RouteChoiceSetsStephane\routeInput"/>	
+		<param name="network" value="D:\Arbeit\RouteChoiceSetsStephane\realNetwork\network.xml.gz"/>
+		<param name="filterPersons" value="false"/>
+		<param name="inputFileFilter" value="D://Aehnlichkeiten//GPSDatenaufbereitung//MapMatching//PersonsToBeFiltered_Balmer.txt"/>
+		<param name="bike" value="false"/>
+		<param name="sourceFileNetworkForConversion" value="F:\RouteChoiceSetsStephane\ITN_England_node.txt"/>
+
+		<!--algos: Balmer, Prato, Frejinger, Stochastic-->
+		<param name="choiceSetGenerationAlgo" value="Frejinger"/>
+		<param name="choiceSetSize" value="10"/>
+		<param name="defaultTime" value="0"/>		
+		<param name="timeout" value="300000"/> <!--in milisec--> 
+		
+		<!-- Prato parameters -->		
+		<param name="overallTemporalFactor" value="1.5"/>		
+		<param name="overallDistanceFactor" value="1.5"/>
+		<param name="minChoiceSetSize" value="20"/>		
+		<param name="longRouteBoundary" value="20"/>
+		<param name="directionalFactorShortRoutes" value="1.1"/>
+		<param name="temporalFactorShortRoutes" value="1.5"/>		
+		<param name="loopFactorShortRoutes" value="1.2"/>	
+		<param name="overlapFactorShortRoutes" value="0.8"/>		
+		<param name="directionalFactorLongRoutes" value="1.05"/>
+		<param name="temporalFactorLongRoutes" value="1.5"/>		
+		<param name="loopFactorLongRoutes" value="1.2"/>	
+		<param name="overlapFactorLongRoutes" value="0.8"/>
+		<param name="restrictChoiceSetSize" value="false"/>
+		
+		<!-- Balmer parameters -->		
+		<param name="variationFactorBalmer" value="1"/>	
+		
+		<!-- Stochastic CSG parameters -->		
+		<param name="randomDistribution" value="uniform"/> <!-- possible values: normal, uniform -->
+		<param name="variationFactorLinkLengths" value="2"/>	
+		
+		<!-- Frejinger parameters -->	
+		<param name="frejingerA" value="30"/>	
+		<param name="frejingerB" value="1"/>
+		<param name="randomSeed" value="4711" />	
+		
+		<!-- Output -->
+		<param name="outputDir" value="D:\Arbeit\RouteChoiceSetsStephane\realNetwork"/>
+		<param name="targetDirChoiceSets" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//ChoiceSetGeneration//output"/>
+		<param name="writeOutputForGIS" value="true"/>
+		
+		</module>
+
+<!-- ====================================================================== -->
+		
+		<module name="PostprocessChoiceSets">
+		
+		<!-- available calculation bases: dist, fftt, dyntt, all -->
+		<param name="calculationBase" value="fftt"/>
+		
+		<param name="network" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//Netze//navtec_ch//network.xml.gz"/>
+		<param name="sourceDirChoiceSets" value="D:\Aehnlichkeiten\GPS_Datenaufbereitung\ModelEstimations\dritteRunde\input"/>
+		
+		<param name="addChosenRoutes" value="false"/>
+		<param name="chosenRoutesFile" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//ChoiceSetGeneration//input//oDSample_test.txt"/>
+		<param name="maxChoiceSetSize" value="61"/>
+		<param name="addedChosenRouteId" value="10"/>			
+		
+		<!-- Add and calculate additional information -->	
+		<param name="addPersonDetails" value="false"/>
+		<param name="sourceFilePersonDetails" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//MapMatching//PersonStatistics.txt"/>		
+		<param name="usePathSize1" value="true"/>
+		<param name="usePathSize2" value="false"/>
+		<param name="usePathSize3" value="false"/>
+		<param name="rammingGamma" value="infinity"/>
+		<param name="usePathSize4" value="false"/>
+		<param name="usePathSize1CompleteSet" value="false"/>
+		<param name="usePathSize2CompleteSet" value="false"/>
+		<param name="usePathSize3CompleteSet" value="false"/>
+		<param name="usePathSize4CompleteSet" value="false"/>
+		<param name="usePathSizePerRoadType1" value="false"/>
+		<param name="usePathSizePerRoadType3" value="false"/>
+		<param name="useCommonalityFactor1" value="false"/>
+		<param name="gammaCF1" value="1"/>
+		<param name="useCommonalityFactor4" value="false"/>
+		<param name="useSamplingCorrection" value="true"/>
+		<param name="useRoadTypePercentages" value="false"/>		
+		<param name="sourceFileRoadType" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//Netze//navtec_ch//RoadTypes.txt"/>		
+		<param name="sourceFileEvents" value="../ChoiceSetGeneration/it.60/60.events.txt.gz"/>		
+		
+		
+		<!-- Bike Choice Set Attributes -->
+		<param name="inputFileLinkattributes" value="..//attributeCalculation//input//strassennetz.txt"/>
+		<param name="inputFileNodeHeigths" value="..//attributeCalculation//input//strassenknoten_mit_hoehe.txt"/>
+		
+		<!-- Choice set size reduction -->
+		<param name="targetChoiceSetSize" value="2"/>		
+		<!-- available calculation bases: random, similarityBased, similarityDistributionBased, ruleBased -->
+		<param name="reductionProcedure" value="similarityBased"/>		
+		<param name="randomSeed" value="4711" />
+		<param name="numberOfSimilarityClasses" value="10" />
+		<param name="maxDistanceFactor" value="15" />
+		<param name="maxTravelTimeFactor" value="2" />
+		<param name="minNumberOfMotorwayLinks" value="3" />
+		<param name="maxOverlap" value="0.9" />
+		
+		
+		
+		<!-- Output -->	
+		<param name="writeDatFile" value="true" />	
+		<param name="targetfileDatFile" value="D:\Aehnlichkeiten\GPS_Datenaufbereitung\ModelEstimations\dritteRunde\output\test_reduced_attributes.txt"/>
+		<param name="writeChoiceSet" value="true" />
+		<param name="targetfileChoiceSet" value="D:\Aehnlichkeiten\GPS_Datenaufbereitung\ModelEstimations\dritteRunde\output\test_reduced_choiceSets.txt"/>
+		<param name="targetfileDistTTRatios" value="D:\Aehnlichkeiten\GPSDatenaufbereitung\ModelEstimations\dritteRunde\output\test_distTTRatios.txt"/>
+		
+		</module>
+
+<!-- ====================================================================== -->
+
+		
+		<module name="GPSModFileWriter">
+		
+		<!-- route specific characteristics, called rParameters -->	<!--Trips,CStages,TMileage,CMileage-->		
+		<param name="targetfileModFile" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//ModelEstimations//dritteRunde//modFiles//MNL_RTdyntt_SC_20.mod"/>
+		<param name="actualMaxChoiceSetSize" value="21"/>	
+
+		<param name="numberOfRouteParameters" value="5"/>
+		
+		<param name="rParameter" value="dyntt"/>	
+		
+		<param name="rParameter0" value="mw"/>
+		<param name="rParameter1" value="eu"/>
+		<param name="rParameter2" value="um"/>
+		<param name="rParameter3" value="lr"/>
+		
+		<param name="normRoadType" value="false"/>
+		<param name="rParameter" value="normMw"/>
+		<param name="rParameter" value="normEu"/>
+		<param name="rParameter" value="normUm"/>
+		<param name="rParameter" value="normLr"/>	
+		
+		<param name="rParameter" value="ps1"/>
+		<param name="rParameter" value="ps2"/>
+		<param name="rParameter" value="ps3"/>
+		<param name="rParameter" value="ps4"/>
+		
+		<param name="rParameter" value="cf1"/>
+		<param name="rParameter" value="cf4"/>
+		
+		<param name="rParameter" value="ps1Mw"/>
+		<param name="rParameter" value="ps1Eu"/>
+		<param name="rParameter" value="ps1Um"/>
+		<param name="rParameter" value="ps1Lr"/>
+		
+		<param name="rParameter" value="ps3Mw"/>
+		<param name="rParameter" value="ps3Eu"/>
+		<param name="rParameter" value="ps3Um"/>
+		<param name="rParameter" value="ps3Lr"/>
+		
+		<param name="rParameter4" value="SamplCorr"/>
+		
+		
+		<!-- ln transformations -->
+		<param name="numberOfLnParameters" value="0"/>
+		<param name="lnParameter" value="ps1"/>
+		<param name="lnParameter0" value="ps2"/>
+		<param name="lnParameter" value="ps3"/>
+		<param name="lnParameter" value="cf1"/>
+		<param name="lnParameter" value="cf4"/>
+		<param name="lnParameter" value="ps1Mw"/>
+		<param name="lnParameter" value="ps1Eu"/>
+		<param name="lnParameter" value="ps1Um"/>
+		<param name="lnParameter" value="ps1Lr"/>
+		<param name="lnParameter" value="ps3Mw"/>
+		<param name="lnParameter" value="ps3Eu"/>
+		<param name="lnParameter" value="ps3Um"/>
+		<param name="lnParameter" value="ps3Lr"/>
+		
+		
+		<param name="numberOfBCParameters" value="0"/>
+		<param name="bcParameter" value="ps1"/>
+		<param name="bcParameter0" value="ps2"/>
+		<param name="bcParameter" value="ps3"/>
+		<param name="bcParameter" value="cf1"/>
+		<param name="bcParameter" value="cf4"/>
+		<param name="bcParameter" value="ps1Mw"/>
+		<param name="bcParameter" value="ps1Eu"/>
+		<param name="bcParameter" value="ps1Um"/>
+		<param name="bcParameter" value="ps1Lr"/>
+		<param name="bcParameter" value="ps3Mw"/>
+		<param name="bcParameter" value="ps3Eu"/>
+		<param name="bcParameter" value="ps3Um"/>
+		<param name="bcParameter" value="ps3Lr"/>
+		<param name="bcParameter" value="expSamplCorr"/>	
+		
+	
+		<!-- mixed logit parameters -->
+		<param name="numberOfMMNLParameters" value="0"/>
+		<param name="useUsedRoadTypeExpr" value="false"/>
+		<param name="mParameter0" value="usedMw"/>
+		<param name="numberOfDraws" value="1500"/>
+				
+				
+		<!-- joint route characteristics and sociodemographic characteristics, shared by all routes, here called personParameters -->		
+		<param name="numberOfPersonParameters" value="0"/>		
+		<!-- joint route characteristics -->		
+		<param name="usePeakTime" value="false"/>
+		<param name="pParameter" value="timeODay"/>
+		<param name="pParameter" value="mP"/>
+		<param name="pParameter" value="eP"/>
+		<param name="pParameter" value="oP"/>
+		<param name="useWeekend" value="false"/>
+		<param name="pParameter" value="weekend"/>
+		<param name="pParameter" value="weekday"/>
+		<param name="combWeekdayPeakHour" value="false"/>
+		<param name="pParameter0" value="mP_Wd"/>
+		<param name="pParameter1" value="eP_Wd"/>
+		<param name="pParameter2" value="oP_Wd_We"/>
+		<param name="pParameter" value="tripsPD"/>
+		<param name="pParameter" value="CStages"/>
+		<param name="pParameter" value="mileageT"/>
+		<param name="pParameter" value="mileageC"/>	
+
+		
+		<param name="numberOfNonLinearPersonParameters" value="0"/>
+		<param name="nLPParameter" value="tripsPD"/>
+		<param name="nLPParameterAv" value="5.349097"/>
+		<param name="nLPParameter" value="mileageT"/>
+		<param name="nLPParameterAv" value="48125.731882"/>
+		<param name="nLPParameter" value="CStages"/>
+		<param name="nLPParameterAv" value="3.490381"/>
+		<param name="nLPParameter" value="mileageC"/>
+		<param name="nLPParameterAv" value="40731.762496"/>
+		
+	 	<param name="numberRefVariablesPP0" value="0"/>
+	 	<param name="refVariable" value="dyntt"/>
+		<param name="refVariable00" value="mw"/>
+		<param name="refVariable01" value="eu"/>
+		<param name="refVariable02" value="um"/>
+		<param name="refVariable03" value="lr"/>
+		
+	 	<param name="numberRefVariablesPP1" value="0"/>
+	 	<param name="refVariable" value="dyntt"/>
+		<param name="refVariable10" value="mw"/>
+		<param name="refVariable11" value="eu"/>
+		<param name="refVariable12" value="um"/>
+		<param name="refVariable13" value="lr"/>
+		
+	 	<param name="numberRefVariablesPP2" value="0"/>
+	 	<param name="refVariable" value="dyntt"/>
+		<param name="refVariable20" value="mw"/>
+		<param name="refVariable21" value="eu"/>
+		<param name="refVariable22" value="um"/>
+		<param name="refVariable23" value="lr"/>
+
+
+
+		<param name="numberOfExpParameters" value="0"/>
+		<param name="expParameter" value="expPS1"/>
+		<param name="expParameter" value="expPS2"/>
+		<param name="expParameter" value="expCF1"/>
+		<param name="expParameter" value="expCF4"/>
+		<param name="expParameter" value="expPS1Mw"/>
+		<param name="expParameter" value="expPS1Eu"/>
+		<param name="expParameter" value="expPS1Um"/>
+		<param name="expParameter" value="expPS1Lr"/>
+		<param name="expParameter" value="expPS3Mw"/>
+		<param name="expParameter" value="expPS3Eu"/>
+		<param name="expParameter" value="expPS3Um"/>
+		<param name="expParameter" value="expPS3Lr"/>	
+		
+			
+		<!-- sociodem -->		
+		<param name="pParameter" value="stagesPD"/>
+		<param name="pParameter" value="WStages"/>
+		<param name="pParameter" value="BStages"/>		
+		<param name="pParameter" value="UPStages"/>
+		<param name="pParameter" value="RStages"/>		
+		<param name="pParameter" value="mileageW"/>
+		<param name="pParameter" value="mileageB"/>		
+		<param name="pParameter" value="mileageU"/>
+		<param name="pParameter" value="mileageR"/>
+		<param name="pParameter" value="avSpeedT"/>
+		<param name="pParameter" value="avSpeedW"/>
+		<param name="pParameter" value="avSpeedB"/>
+		<param name="pParameter" value="avSpeedC"/>
+		<param name="pParameter" value="avSpeedU"/>
+		<param name="pParameter" value="avSpeedR"/>
+		<param name="pParameter" value="townORes"/>
+		
+		
+		<!-- expressions -->		
+		<param name="excludeCF4" value="false"/>
+		<param name="useExpSamplCorr" value="true"/>
+		
+				
+		<!-- Panel effect -->		
+		<param name="usePanelInEstimation" value="false"/>
+		<param name="panelIdentifier" value="personId"/>		
+				
+		<!--available mode forms: BP (Binary Probit Model), MNL, NL, CNL, NGEV-->
+		<param name="modelForm" value="MNL"/>
+
+		
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="TimeAllocationMutator">
+		<param name="mutationRange" value="7200"/>
+	</module>
+
+<!-- ====================================================================== -->
+
+	<module name="Tools" >
+		<param name="sourcedir" value="C:\Documents and Settings\scnadine\My Documents\GPS_Datenaufbereitung\testInput"/> 
+		<param name="sourceFile" value="Z:\sandbox00\studies\GPSProcessing\TestScenario\publicTransportLines.txt"/>
+		<param name="sourceFileCS" value="D://Aehnlichkeiten//GPS_Datenaufbereitung//ModelEstimations//dritteRunde//data//logFiles//CS_CSGStochastic20_90_2.log"/>
+		<param name="sourceFileChosenRoutes" value="Z:\sandbox00\studies\GPSProcessing\TestScenario\chosenRoutesChessboard.txt"/>
+		<param name="sourceFileCoords" value="Z:\sandbox00\studies\GPSProcessing\TestScenario\ChessBoardRoutes.txt"/>
+		<param name="sourceFileZGPS" value="D://Aehnlichkeiten//GPSDatenaufbereitung//GPS//Auswertung//Yalcin//TripsForMapMatching_all.zgps"/>
+		<param name="network" value="Z:\sandbox00\studies\GPSProcessing\TestScenario\publicTransportNetwork.xml"/>
+		<param name="sourceFileRoadType" value="D://Aehnlichkeiten//GPSDatenaufbereitung//Netze//navtec_ch//RoadTypes.txt"/>				
+		<param name="maxNumberOfAlternatives" value="84"/>
+		<param name="gridSize" value="10"/>
+		<!-- Map-matching parameters - need to find a different solution -->
+		<param name="coordDimensionsAnalysis" value="2"/>
+		<param name="initialSearchRadius" value="75"/>
+		<param name="minNumberOfStartNodes" value="5"/>
+		<param name="searchRadiusIncrement" value="100"/>
+		<param name="maxNumberOfCandidates" value="35"/>
+		<param name="candidateReductionRate" value="50"/> <!-- gives the number of processed GPS points after which number of candidates is reduced by 1-->
+		<param name="minNumberOfCandidates" value="15"/>
+		<param name="minNumberOfCoordsPerSegment" value="10"/>		
+		<param name="maxGapDistance" value="100000"/>
+		<param name="maxGapTime" value="120"/>		
+		
+		<param name="linkQualityThreshold" value="1000000"/>
+		<param name="pointQualityThreshold" value="1000000"/>
+		<param name="numberOfBadLinksThreshold" value="1000000"/>	
+		<param name="routeJoiningQualityThreshold" value="1000000"/>			
+		
+		
+		<param name="oneWayNetwork" value="false"/>
+		<param name="targetdir" value="Z:\\sandbox00\\studies\\GPSProcessing\\TestScenario\\"/>
+		<param name="targetFile" value="D:\Aehnlichkeiten\GPSDatenaufbereitung\ModelEstimations\dritteRunde\ModelApplication\datFilesForDescriptives\choiceProbs_B100_dyntt"/> 
+	</module>
+
+<!-- ====================================================================== -->
+
+</config>

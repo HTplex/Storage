@@ -1,0 +1,7 @@
+package error;
+import java.util.Scanner;
+public class ErrorA04exmess {
+	public static void main(String[]args){
+		
+	}
+}

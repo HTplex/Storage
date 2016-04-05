@@ -1,0 +1,6 @@
+package action;
+import java.util.Scanner;
+import java.awt.*;
+public class ActionA06press {
+
+}

@@ -1,0 +1,27 @@
+package mathod;
+import java.util.Scanner;
+public class MathodA09mutimathod {
+	public static void main(String[]args){
+		System.out.println(max(1,8));
+		System.out.println(max(8.2,8.8));
+		System.out.println(max(4,5,7,8));
+	}
+	public static int max(int i1,int i2){
+		int out;
+		if (i1>i2)
+			out=i1;
+		else out=i2;
+		return out;
+	}
+	public static double max(double i1,double i2){
+		double out;
+		if (i1>i2)
+			out=i1;
+		else out=i2;
+		return out;
+	}
+	public static int max(int i1,int i2,int i3,int i4){
+		int out=max(max(max(i1,i2),i3),i4);
+		return out;
+	}
+}

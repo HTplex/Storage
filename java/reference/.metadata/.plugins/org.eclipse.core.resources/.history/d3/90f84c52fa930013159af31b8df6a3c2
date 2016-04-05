@@ -1,0 +1,28 @@
+package graphic;
+import java.util.Scanner;
+import java.awt.Graphics;
+import javax.swing.*;
+
+public class GraphicA01graphic {
+	public static void main(String[]args){
+		all a=new all();
+		a.setSize(200,100);
+		a.setDefaultCloseOperation(1);
+		a.setLocationRelativeTo(null);
+		a.setVisible(true);
+	}
+}
+class tri extends JPanel{
+	protected void ppp(Graphics g){
+		super.paintComponents(g);
+		g.drawLine(1, 1, 55, 55);
+	}
+
+}
+ 
+class all extends JFrame{
+	public all(){
+		this.setLayout(new GridLayout(1,1));
+		this.add(new tri());
+	}
+}

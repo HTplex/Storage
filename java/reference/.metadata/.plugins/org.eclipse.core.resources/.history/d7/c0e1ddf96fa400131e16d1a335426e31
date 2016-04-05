@@ -1,0 +1,40 @@
+package action;
+import java.util.Scanner;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+public class ActionA05mouse {
+	public static void main(String[]args){
+		JFrame f=new JFrame();
+		f.add(new movablestring("haha"));
+		f.setSize(600,600);
+		f.setLocationRelativeTo(null);
+		f.setDefaultCloseOperation(1);
+		f.setVisible(true);
+	}
+}
+class movablestring extends JPanel{
+	String s;
+	int x=100;
+	int y=100;
+	movablestring(String s){
+		this.s=s;
+		this.addMouseWheelListener(new MouseWheelListener(){
+			public void mouseWheelMoved(MouseWheelEvent ee){
+				x+=ee.getWheelRotation();
+					repaint();
+			}
+		});
+		this.addMouseMotionListener(new MouseMotionAdapter(){
+			public void mouseMoved(MouseEvent e){
+				x=e.getX();
+				y=e.getY();
+				repaint();
+			}
+		});
+	}
+	protected void paintComponent(Graphics g){
+		super.paintComponent(g);
+		g.drawString(this.s, this.x, this.y);
+	}
+}

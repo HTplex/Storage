@@ -1,0 +1,42 @@
+package action;
+import java.util.Scanner;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;;
+public class ActionA06press {
+	public static void main(String[]args){
+	JFrame a=new JFrame();
+	a.add(new keylistener());
+	a.setSize(400, 400);
+	a.setLocationRelativeTo(null);
+	a.setDefaultCloseOperation(1);
+	a.setVisible(true);
+	}
+}
+class keylistener extends JPanel{
+	String s="hei";
+	int x=this.getWidth();
+	int y=this.getHeight();
+	protected void paintComponent(Graphics g){
+		super.paintComponent(g);
+		g.drawString(this.s, this.x, this.y);
+	}
+	keylistener(){
+		this.setFocusable(true);
+		this.addKeyListener(new KeyAdapter(){
+			public void keyPressed(KeyEvent e){
+				switch(e.getKeyCode()){
+				case(KeyEvent.VK_TAB): s="TAB";
+				case(KeyEvent.VK_SHIFT): s="SHIFT";
+				case(KeyEvent.VK_CONTROL): s="CTRL";
+				case(KeyEvent.VK_UP): y++;
+				case(KeyEvent.VK_DOWN):y--;
+				case(KeyEvent.VK_LEFT): x--;
+				case(KeyEvent.VK_RIGHT): x++;
+				default: s=(e.getKeyChar()+"");
+				}
+				repaint();
+			}
+		});
+	}
+}

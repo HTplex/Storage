@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE population SYSTEM "http://www.matsim.org/files/dtd/population_v5.dtd">
+
+<population>
+	<person id="555555" employed="no">
+		<plan score="100.0" selected="no">
+			<act type="home" link="TXL" x="1479481.22232818" y="6868264.24630277" end_time="07:00:00" />
+			<leg mode="transit_walk" trav_time="00:07:48">
+				<route type="generic"></route>
+			</leg>
+			<act type="pt interaction" link="TXL" x="1479181.22232818" y="6868014.24630277" max_dur="00:00:00" />
+			<leg mode="pt" trav_time="01:37:11">
+				<route type="experimentalPt1">PT1===TXL===TXL_MUC_SBA===TXL_MUC_SBA23===MUC</route>
+			</leg>
+			<act type="pt interaction" link="MUC" x="1312021.0919657303" y="6133968.628250412" max_dur="00:00:00" />
+			<leg mode="transit_walk" trav_time="00:05:00">
+				<route type="generic"></route>
+			</leg>
+			<act type="home" link="MUC" x="1312021.0919657303" y="6134218.628250412" />
+		</plan>
+
+		<plan score="10.0" selected="yes">
+			<act type="home" link="TXL" x="1479481.22232818" y="6868264.24630277" end_time="07:00:00" />
+			<leg mode="transit_walk" trav_time="00:07:48">
+				<route type="generic"></route>
+			</leg>
+			<act type="pt interaction" link="TXL" x="1479181.22232818" y="6868014.24630277" max_dur="00:00:00" />
+			<leg mode="pt" trav_time="01:37:11">
+				<route type="experimentalPt1">PT1===TXL===TXL_MUC_SBA===TXL_MUC_SBA23===MUC</route>
+			</leg>
+			<act type="pt interaction" link="MUC" x="1312021.0919657303" y="6133968.628250412" max_dur="00:00:00" />
+			<leg mode="transit_walk" trav_time="00:05:00">
+				<route type="generic"></route>
+			</leg>
+			<act type="home" link="MUC" x="1312021.0919657303" y="6134218.628250412" />
+		</plan>
+	</person>
+
+	<person id="666666" employed="no">
+		<plan score="56.75944116654094" selected="no">
+			<act type="home" link="TXL" x="1479481.22232818" y="6868264.24630277" end_time="07:00:00" />
+			<leg mode="transit_walk" trav_time="00:07:48">
+				<route type="generic"></route>
+			</leg>
+			<act type="pt interaction" link="TXL" x="1479181.22232818" y="6868014.24630277" max_dur="00:00:00" />
+			<leg mode="pt" trav_time="01:37:11">
+				<route type="experimentalPt1">PT1===TXL===TXL_MUC_SBA===TXL_MUC_SBA23===MUC</route>
+			</leg>
+			<act type="pt interaction" link="MUC" x="1312021.0919657303" y="6133968.628250412" max_dur="00:00:00" />
+			<leg mode="transit_walk" trav_time="00:05:00">
+				<route type="generic"></route>
+			</leg>
+			<act type="home" link="MUC" x="1312021.0919657303" y="6134218.628250412" />
+		</plan>
+
+		<plan score="56.75944116654094" selected="yes">
+			<act type="home" link="TXL" x="1479481.22232818" y="6868264.24630277" end_time="07:00:00" />
+			<leg mode="transit_walk" trav_time="00:07:48">
+				<route type="generic"></route>
+			</leg>
+			<act type="pt interaction" link="TXL" x="1479181.22232818" y="6868014.24630277" max_dur="00:00:00" />
+			<leg mode="pt" trav_time="01:37:11">
+				<route type="experimentalPt1">PT1===TXL===TXL_MUC_SBA===TXL_MUC_SBA23===MUC</route>
+			</leg>
+			<act type="pt interaction" link="MUC" x="1312021.0919657303" y="6133968.628250412" max_dur="00:00:00" />
+			<leg mode="transit_walk" trav_time="00:05:00">
+				<route type="generic"></route>
+			</leg>
+			<act type="home" link="MUC" x="1312021.0919657303" y="6134218.628250412" />
+		</plan>
+
+	</person>
+
+	<person id="777777" employed="no">
+		<plan score="56.75944116654094" selected="no">
+			<act type="home" link="TXL" x="1479481.22232818" y="6868264.24630277" end_time="07:00:00" />
+			<leg mode="transit_walk" trav_time="00:07:48">
+				<route type="generic"></route>
+			</leg>
+			<act type="pt interaction" link="TXL" x="1479181.22232818" y="6868014.24630277" max_dur="00:00:00" />
+			<leg mode="pt" trav_time="01:37:11">
+				<route type="experimentalPt1">PT1===TXL===TXL_MUC_SBA===TXL_MUC_SBA23===MUC</route>
+			</leg>
+			<act type="pt interaction" link="MUC" x="1312021.0919657303" y="6133968.628250412" max_dur="00:00:00" />
+			<leg mode="transit_walk" trav_time="00:05:00">
+				<route type="generic"></route>
+			</leg>
+			<act type="home" link="MUC" x="1312021.0919657303" y="6134218.628250412" />
+		</plan>
+
+		<plan score="56.75944116654094" selected="yes">
+			<act type="home" link="TXL" x="1479481.22232818" y="6868264.24630277" end_time="07:00:00" />
+			<leg mode="transit_walk" trav_time="00:07:48">
+				<route type="generic"></route>
+			</leg>
+			<act type="pt interaction" link="TXL" x="1479181.22232818" y="6868014.24630277" max_dur="00:00:00" />
+			<leg mode="pt" trav_time="01:37:11">
+				<route type="experimentalPt1">PT1===TXL===TXL_MUC_SBA===TXL_MUC_SBA23===MUC</route>
+			</leg>
+			<act type="pt interaction" link="MUC" x="1312021.0919657303" y="6133968.628250412" max_dur="00:00:00" />
+			<leg mode="transit_walk" trav_time="00:05:00">
+				<route type="generic"></route>
+			</leg>
+			<act type="home" link="MUC" x="1312021.0919657303" y="6134218.628250412" />
+		</plan>
+
+		
+ <plan score="23.68666666666667" selected="no">
+		<act type="home" link="TXL" x="1479481.22232818" y="6868264.24630277" end_time="07:00:00" />
+		<leg mode="transit_walk" trav_time="00:06:30">
+			<route type="generic"></route>
+		</leg>
+		<act type="pt interaction" link="TXL" x="1479181.22232818" y="6868014.24630277" max_dur="00:00:00" />
+		<leg mode="pt" trav_time="01:41:01">
+        <route type="experimentalPt1">PT1===TXL===TXL_DUS_SBA===TXL_DUS_SBA24===DUS</route>
+		</leg>
+		<act type="pt interaction" link="DUS" x="753273.9473126536" y="6639292.176954748" start_time="11:54:39" max_dur="00:00:00" />
+		<leg mode="pt" trav_time="01:10:01">
+           <route type="experimentalPt1">PT1===DUS===DUS_MUC_SBA===DUS_MUC_SBA25===MUC</route>
+		</leg>
+		<act type="pt interaction" link="MUC" x="1312021.0919657303" y="6133968.628250412" max_dur="00:00:00" />
+		<leg mode="transit_walk" trav_time="00:05:00">
+			<route type="generic"></route>
+		</leg>
+		<act type="home" link="MUC" x="1312021.0919657303" y="6134218.628250412" />
+	</plan>
+</person>
+
+	<person id="888888" employed="no">
+		<plan score="56.75944116654094" selected="no">
+			<act type="home" link="TXL" x="1479481.22232818" y="6868264.24630277" end_time="07:00:00" />
+			<leg mode="transit_walk" trav_time="00:07:48">
+				<route type="generic"></route>
+			</leg>
+			<act type="pt interaction" link="TXL" x="1479181.22232818" y="6868014.24630277" max_dur="00:00:00" />
+			<leg mode="pt" trav_time="01:37:11">
+				<route type="experimentalPt1">PT1===TXL===TXL_MUC_SBA===TXL_MUC_SBA23===MUC</route>
+			</leg>
+			<act type="pt interaction" link="MUC" x="1312021.0919657303" y="6133968.628250412" max_dur="00:00:00" />
+			<leg mode="transit_walk" trav_time="00:05:00">
+				<route type="generic"></route>
+			</leg>
+			<act type="home" link="MUC" x="1312021.0919657303" y="6134218.628250412" />
+		</plan>
+
+		<plan score="56.75944116654094" selected="yes">
+			<act type="home" link="TXL" x="1479481.22232818" y="6868264.24630277" end_time="07:00:00" />
+			<leg mode="transit_walk" trav_time="00:07:48">
+				<route type="generic"></route>
+			</leg>
+			<act type="pt interaction" link="TXL" x="1479181.22232818" y="6868014.24630277" max_dur="00:00:00" />
+			<leg mode="pt" trav_time="01:37:11">
+				<route type="experimentalPt1">PT1===TXL===TXL_MUC_SBA===TXL_MUC_SBA23===MUC</route>
+			</leg>
+			<act type="pt interaction" link="MUC" x="1312021.0919657303" y="6133968.628250412" max_dur="00:00:00" />
+			<leg mode="transit_walk" trav_time="00:05:00">
+				<route type="generic"></route>
+			</leg>
+			<act type="home" link="MUC" x="1312021.0919657303" y="6134218.628250412" />
+		</plan>
+
+    <plan score="10.9909863299481856" selected="yes">
+			<act type="home" link="TXL" x="1505317.814252042" y="6835511.0162533475" start_time="00:00:00" max_dur="08:26:44" end_time="08:26:44" />
+      <leg mode="train" dep_time="08:26:44" trav_time="06:25:32" arr_time="14:52:16">
+              <route type="generic"></route>
+      </leg>
+      <act type="home" link="MUC" x="1026584.3365939002" y="6190540.348240967" start_time="14:52:16" />
+    </plan>
+	</person>
+
+
+	<person id="999999" employed="no">
+		<plan score="10.0" selected="no">
+			<act type="home" link="TXL" x="1479481.22232818" y="6868264.24630277" end_time="07:00:00" />
+			<leg mode="transit_walk" trav_time="00:07:48">
+				<route type="generic"></route>
+			</leg>
+			<act type="pt interaction" link="TXL" x="1479181.22232818" y="6868014.24630277" max_dur="00:00:00" />
+			<leg mode="pt" trav_time="01:37:11">
+				<route type="experimentalPt1">PT1===TXL===TXL_MUC_SBA23===TXL_MUC_SBA23===MUC</route>
+			</leg>
+			<act type="pt interaction" link="MUC" x="1312021.0919657303" y="6133968.628250412" max_dur="00:00:00" />
+			<leg mode="transit_walk" trav_time="00:05:00">
+				<route type="generic"></route>
+			</leg>
+			<act type="home" link="MUC" x="1312021.0919657303" y="6134218.628250412" />
+		</plan>
+
+
+    <plan score="20.0" selected="yes">
+			<act type="home" link="TXL" x="1505317.814252042" y="6835511.0162533475" start_time="00:00:00" max_dur="08:26:44" end_time="08:26:44" />
+      <leg mode="train" dep_time="08:26:44" trav_time="06:25:32" arr_time="14:52:16">
+              <route type="generic"></route>
+      </leg>
+      <act type="home" link="MUC" x="1026584.3365939002" y="6190540.348240967" start_time="14:52:16" />
+    </plan>
+
+    <plan score="20.0" selected="yes">
+			<act type="home" link="TXL" x="1505317.814252042" y="6835511.0162533475" start_time="00:00:00" max_dur="08:26:44" end_time="08:26:44" />
+      <leg mode="train" dep_time="08:26:44" trav_time="06:25:32" arr_time="14:52:16">
+              <route type="generic"></route>
+      </leg>
+      <act type="home" link="MUC" x="1026584.3365939002" y="6190540.348240967" start_time="14:52:16" />
+    </plan>
+	</person>
+
+</population>

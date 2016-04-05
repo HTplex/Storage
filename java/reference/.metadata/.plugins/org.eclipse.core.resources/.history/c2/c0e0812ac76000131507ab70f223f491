@@ -1,0 +1,30 @@
+package string;
+import java.util.Scanner;
+public class StringC07cellphone {
+	public static void main(String[]args){
+		Scanner input=new Scanner(System.in);
+		String s=input.next();
+		char[] c=s.toCharArray();
+		for(int i=0;i<c.length;i++){
+			System.out.print(getnumber(c[i]));
+		}
+	}
+	public static int getnumber(char c){
+		String[] s={"ADGJMPTW","BEHKNQUX","CFILORVY","SZ"};
+		for(int i=0;i<4;i++){
+		if(inString(c,s[i]))
+			return i;
+		}
+		return 0;
+	}
+	public static boolean inString(char c, String s){
+		boolean b=false;
+		for(int i=0;i<s.length();i++){
+			if(c==s.charAt(i)){
+				b=true;
+				return b;
+			}
+		}
+		return b;
+	}
+}

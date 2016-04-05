@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package error;
+
+/**
+ * @author FULCRUM
+ *
+ */
+public abstract class ErrorB01input {
+
+}

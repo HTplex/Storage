@@ -1,0 +1,21 @@
+package error;
+import java.util.Scanner;
+public class ErrorA05circlepp {
+	public static void main(String[]args){
+		circlepp m=new circlepp();
+		m.setradius(-1);
+	}
+}
+class circlepp{
+	double r;
+	circlepp(){
+		this(1.0);
+	}
+	circlepp(double i){
+		this.r=i;
+	}
+	public void setradius(double i){
+		if (i>0)
+			this.r=i;
+	}
+}

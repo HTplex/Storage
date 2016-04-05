@@ -1,0 +1,19 @@
+package absinter;
+import java.util.Scanner;
+public class AbsA01abstract {
+	public static void main(String[]args){
+		
+	}
+}
+abstract class geo2{
+	private String color;
+	private int n;
+	geo2(){
+		this(1);
+	}
+	geo2(int i){
+		this.n=i;
+	}
+	public abstract double getArea();
+
+}

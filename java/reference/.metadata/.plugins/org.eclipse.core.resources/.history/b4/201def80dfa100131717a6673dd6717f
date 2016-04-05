@@ -1,0 +1,11 @@
+package error;
+import java.util.Scanner;
+public class ExceptionR03 {
+	public static void main(String[]args){
+		Scanner input=new Scanner(System.in);
+		
+	}
+	class tttii throws Exception{
+		
+	}
+}

@@ -1,0 +1,19 @@
+package loop;
+import java.util.Scanner;
+public class MathodA2max {
+	public static void main(String[]args){
+		Scanner input=new Scanner(System.in);
+		System.out.print("please input the first number");
+		int a=input.nextInt();
+		System.out.print("Please input the second number");
+		int b=input.nextInt();
+				System.out.println(max(a,b));
+	}
+		public static int max(int i1, int i2){
+			int result;
+			if (i1>=i2)
+				result=i1;
+			else result=i2;
+			return result;
+	}
+}

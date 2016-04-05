@@ -1,0 +1,9 @@
+package oj;
+import java.util.Scanner;
+public class free {
+	public static void main(String[]args){
+		char a='0';
+		char b='0';
+		System.out.print(a==b);
+	}
+}

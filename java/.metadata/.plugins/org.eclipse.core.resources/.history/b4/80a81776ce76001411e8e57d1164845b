@@ -1,0 +1,59 @@
+
+public class BouncionBalls {
+	public static void main(String[]args){
+		//int N=StdIn.readInt();
+		Ball[] a=new Ball[50];
+		for(int i=0;i<50;i++){
+			a[i]=new Ball();
+			a[i].RandomBall(a[i]);
+		}
+		while(true){
+			StdDraw.clear();
+			for(int i=0;i<50;i++){
+			a[i].move(0.05);
+			a[i].draw();
+			}
+			StdDraw.show(50);
+		}
+	}
+}
+class Ball{
+	private double Lx, Ly;
+	private double Vx, Vy;
+	private final double radius;
+	Ball(double lx, double ly, double vx, double vy,double r){
+		this.setPosition(lx, ly);
+		this.setVelocity(vx, vy);
+		this.radius=r;
+	}
+	Ball(){
+		this.radius=0.01;
+	}
+	
+	
+	public void RandomBall(Ball a){
+		a.setPosition(a.radius+Math.random()*(1-2*radius),
+						a.radius+Math.random()*(1-2*radius));
+		a.setVelocity(Math.random(), Math.random());
+	}
+	public void move(double dt){
+		if(Lx+dt*Vx<radius||Lx+dt*Vx>1.0-radius) Vx*=-1;
+		if(Ly+dt*Vy<radius||Ly+dt*Vy>1.0-radius) Vy*=-1;
+			Lx+=dt*Vx;
+			Ly+=dt*Vy;
+	}
+	
+	public void setPosition(double x, double y){
+		this.Lx=x;
+		this.Ly=y;
+	}
+	
+	public void setVelocity(double x, double y){
+		this.Vx=x;
+		this.Vy=y;
+	}
+	
+	public void draw(){
+		StdDraw.filledCircle(this.Lx, this.Ly, this.radius);
+	}
+}

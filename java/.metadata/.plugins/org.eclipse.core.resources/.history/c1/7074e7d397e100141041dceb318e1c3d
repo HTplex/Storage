@@ -1,0 +1,40 @@
+package week1;
+
+public class BDQuickUnionImprovingUser {
+  public static void main(String[] args) {
+    BDQuickUnionImproving a = new BDQuickUnionImproving(10);
+
+    // long time=0;
+    // for(int n=0;n<1000;n++){
+    /*
+     * long i=System.nanoTime(); a.union(0, 2); a.union(3, 5); a.union(5, 6); a.union(0, 7);
+     * a.union(6, 2); a.union(3, 2); System.out.println(a.connected(0, 8));
+     * System.out.println(a.connected(0, 6)); System.out.println(a.connected(0, 2));
+     * System.out.println(a.connected(0, 0)); time+=(System.nanoTime()-i); // }
+     * System.out.println(time);
+     */
+
+    a.union(2, 7);
+    a.union(0, 5);
+    a.union(0, 4);
+    a.union(9, 5);
+    a.union(8, 9);
+    a.union(3, 6);
+    a.union(7, 3);
+    a.union(4, 3);
+    a.union(4, 1);
+    for (int i = 0; i < a.id.length; i++) {
+      System.out.print(a.id[i] + " ");
+    }
+    System.out.println(diff("10101010","01010101"));
+  }
+
+  public static int diff(String s1, String s2) {
+    int sum=0;
+    for (int i = 0; i < s1.length(); i++) {
+      if(s1.charAt(i)!=s2.charAt(i))
+        sum++;
+    }
+    return sum;
+  }
+}

@@ -1,0 +1,22 @@
+package mathod;
+import java.util.Scanner;
+public class MathodA6voidsteady2 {
+	public static void main(String[]args){
+		Scanner input=new Scanner(System.in);
+		System.out.println("please input number a");
+		int a=input.nextInt();
+		System.out.println("please input number b");
+		int b=input.nextInt();
+		System.out.println("(beforevoid)now x is"+a+"   now y is "+b);
+		swap(a,b);
+		System.out.println("(aftervoid)now x is"+a+"   now y is "+b);
+	}
+	public static void swap (int a,int b){
+		System.out.println("(beforeswap)now x is"+a+"   now y is "+b);
+		int c;
+		c=a;
+		a=b;
+		b=c;
+		System.out.println("(afterswap)now x is"+a+"   now y is "+b);
+	}
+}

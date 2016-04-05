@@ -1,0 +1,68 @@
+package action;
+import java.util.Scanner;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.*;
+public class ActionA01circle {
+	public static void main(String[]args){
+		JFrame f=new JFrame();
+		f.add(new shrkcircle());
+		f.setSize(300, 300);
+		f.setVisible(true);
+		f.setDefaultCloseOperation(1);
+		f.setLocationRelativeTo(null);
+	}
+}
+class shrkcircle extends JPanel{
+	JButton large=new JButton("Lar");
+	JButton shrink=new JButton("Shr");
+	circlew hehe=new circlew();
+	class Buttons extends JPanel{
+		Buttons(){
+			this.setLayout(new GridLayout(1,2));
+			large.addActionListener(new enlargeee());
+			shrink.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					hehe.shrink();
+				}
+			});//anonymouns inner class
+			this.add(large);
+			this.add(shrink);
+		}
+	}
+	shrkcircle(){
+		this.setLayout(new BorderLayout());
+		this.add(hehe,BorderLayout.CENTER);
+		this.add(new Buttons(),BorderLayout.SOUTH);
+	}
+	class enlargeee implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			hehe.enlarge();
+		}
+	}
+	/*class shirnkkkk implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			hehe.shrink();
+		}
+	}*/
+	
+	class circlew extends JPanel{
+		int r;
+		circlew(){
+			this.r=10;
+		}
+		protected void paintComponent(Graphics g){
+			super.paintComponent(g);
+			g.drawOval((int)(this.getWidth()/2-r/2), (int)((this.getHeight()-r)/2), r, r);
+		}
+		public void enlarge(){
+			this.r++;
+			this.repaint();
+		}
+		public void shrink(){
+			this.r--;
+			this.repaint();
+		}
+	}
+}

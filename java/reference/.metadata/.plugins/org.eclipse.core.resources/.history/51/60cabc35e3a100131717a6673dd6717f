@@ -1,0 +1,53 @@
+package graphic;
+import javax.swing.*;
+import java.util.*;
+import java.awt.*;
+public class GraphicB02button {
+	public static void main(String[]args){
+		JFrame a=new JFrame();
+		a.setLayout(new GridLayout(2,1));
+		a.add(new ovalbutton("ok"));
+		a.add(new ovalbutton("nope"));
+		a.setSize(320, 180);
+		a.setLocationRelativeTo(null);
+		a.setDefaultCloseOperation(1);
+		a.setVisible(true);
+		
+	}
+}
+class ovalbutton extends JButton{
+	public int x=this.getWidth();
+	public int y=this.getHeight();
+	public ovalbutton(String s){
+		super(s);
+	}
+	protected void paintComponent(Graphics g){
+		super.paintComponent(g);
+		g.drawOval(0,0, 50,50);
+	}
+	
+}
+
+class OvalButton extends JButton {
+  public OvalButton() {
+  }
+
+  public OvalButton(String text) {
+    super(text);
+  }
+
+  protected void paintComponent(Graphics g) {
+    // Draw an oval
+    super.paintComponent(g);
+    g.drawOval(5, 5, getWidth() - 10, getHeight() - 10);
+  }
+
+  public Dimension getPreferredSize() {
+    return new Dimension(100, 50);
+  }
+
+
+  public Dimension getMinimumSize() {
+    return new Dimension(100, 50);
+  }
+}

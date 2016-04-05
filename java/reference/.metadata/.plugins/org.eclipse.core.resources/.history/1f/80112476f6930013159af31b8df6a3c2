@@ -1,0 +1,29 @@
+package graphic;
+import java.util.Scanner;
+import java.awt.*;
+import javax.swing.*;
+
+public class GraphicA01graphic {
+	public static void main(String[]args){
+		all a=new all();
+		a.setSize(800,800);
+		a.setDefaultCloseOperation(1);
+		a.setLocationRelativeTo(null);
+		a.setVisible(true);
+	}
+}
+class tri extends JButton{
+	protected void ppp(Graphics g){
+		super.paintComponents(g);
+		g.setColor(new java.awt.Color(1));
+		g.draw3DRect(1, 50, 99, 14, true);
+		
+	}
+}
+ 
+class all extends JFrame{
+	all(){
+		this.setLayout(new GridLayout(1,1));
+		this.add(new tri());
+	}
+}

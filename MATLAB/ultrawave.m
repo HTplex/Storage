@@ -1,0 +1,13 @@
+%fir=[4.66;9.55;14.46;19.37;23.90];
+%sec=[28.85;33.79;38.52;43.39;48.10];
+fir=[0;4.80;8.83;13.75;18.58]
+sec=[23.53;28.39;33.23;38.10;42.95]
+delta=abs(sec-fir)
+avgDelta=sum(delta)/5
+finDelta=avgDelta/5
+NorV=331.46*sqrt(1+20.58/273.15)
+TestLamda=2*finDelta
+TestV=35.831*TestLamda
+E=(TestV-NorV)/NorV
+NorDelta=NorV/35.825*2.5
+theta=E*TestV

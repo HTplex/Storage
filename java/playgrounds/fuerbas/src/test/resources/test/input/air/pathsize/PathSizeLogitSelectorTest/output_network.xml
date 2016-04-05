@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE network SYSTEM "http://www.matsim.org/files/dtd/network_v1.dtd">
+<network>
+
+<!-- ====================================================================== -->
+
+	<nodes>
+		<node id="MUC" x="1312021.0919657303" y="6133968.628250412" />
+		<node id="MUCapron" x="1312021.0919657303" y="6134468.628250412" />
+		<node id="MUCrunwayInbound" x="1310021.0919657303" y="6133468.628250412" />
+		<node id="MUCrunwayOutbound" x="1310021.0919657303" y="6134968.628250412" />
+		<node id="MUCtaxiInbound" x="1311521.0919657303" y="6133468.628250412" />
+		<node id="MUCtaxiOutbound" x="1311521.0919657303" y="6134968.628250412" />
+		<node id="TXL" x="1479181.22232818" y="6868014.24630277" />
+		<node id="TXLapron" x="1479181.22232818" y="6868514.24630277" />
+		<node id="TXLrunwayInbound" x="1477181.22232818" y="6867514.24630277" />
+		<node id="TXLrunwayOutbound" x="1477181.22232818" y="6869014.24630277" />
+		<node id="TXLtaxiInbound" x="1478681.22232818" y="6867514.24630277" />
+		<node id="TXLtaxiOutbound" x="1478681.22232818" y="6869014.24630277" />
+	</nodes>
+
+<!-- ====================================================================== -->
+
+	<links capperiod="01:00:00" effectivecellsize="7.5" effectivelanewidth="3.75">
+		<link id="MUC" from="MUC" to="MUCapron" length="500.0" freespeed="5.555555555555555" capacity="3600.0" permlanes="1.0" oneway="1" modes="car,pt" />
+		<link id="MUCrunwayInbound" from="MUCrunwayInbound" to="MUCtaxiInbound" length="1500.0" freespeed="84.61538461538461" capacity="3600.0" permlanes="0.005" oneway="1" modes="car,pt" />
+		<link id="MUCrunwayOutbound" from="MUCtaxiOutbound" to="MUCrunwayOutbound" length="1500.0" freespeed="84.61538461538461" capacity="3600.0" permlanes="0.005" oneway="1" modes="car,pt" />
+		<link id="MUCtaxiInbound" from="MUCtaxiInbound" to="MUC" length="500.0" freespeed="5.555555555555555" capacity="3600.0" permlanes="1.0" oneway="1" modes="car,pt" />
+		<link id="MUCtaxiOutbound" from="MUCapron" to="MUCtaxiOutbound" length="500.0" freespeed="5.555555555555555" capacity="3600.0" permlanes="1.0" oneway="1" modes="car,pt" />
+		<link id="TXL" from="TXL" to="TXLapron" length="500.0" freespeed="5.555555555555555" capacity="3600.0" permlanes="1.0" oneway="1" modes="car,pt" />
+		<link id="TXL_MUC_AB6185" from="TXLrunwayOutbound" to="MUCrunwayInbound" length="477975.16800000006" freespeed="122.72938487394958" capacity="3600.0" permlanes="1.0" oneway="1" modes="car,pt" />
+		<link id="TXL_MUC_AB6187" from="TXLrunwayOutbound" to="MUCrunwayInbound" length="477975.16800000006" freespeed="122.72938487394958" capacity="3600.0" permlanes="1.0" oneway="1" modes="car,pt" />
+		<link id="TXL_MUC_SBA23" from="TXLrunwayOutbound" to="MUCrunwayInbound" length="477975.16800000006" freespeed="122.72938487394958" capacity="3600.0" permlanes="1.0" oneway="1" modes="car,pt" />
+		<link id="TXL_MUC_AB6191" from="TXLrunwayOutbound" to="MUCrunwayInbound" length="477975.16800000006" freespeed="122.72938487394958" capacity="3600.0" permlanes="1.0" oneway="1" modes="car,pt" />
+		<link id="TXL_MUC_AB6199" from="TXLrunwayOutbound" to="MUCrunwayInbound" length="477975.16800000006" freespeed="122.72938487394958" capacity="3600.0" permlanes="1.0" oneway="1" modes="car,pt" />
+		<link id="TXL_MUC_AB6201" from="TXLrunwayOutbound" to="MUCrunwayInbound" length="477975.16800000006" freespeed="122.72938487394958" capacity="3600.0" permlanes="1.0" oneway="1" modes="car,pt" />
+		<link id="TXL_MUC_AB6203" from="TXLrunwayOutbound" to="MUCrunwayInbound" length="477975.16800000006" freespeed="122.72938487394958" capacity="3600.0" permlanes="1.0" oneway="1" modes="car,pt" />
+		<link id="TXL_MUC_AB6205" from="TXLrunwayOutbound" to="MUCrunwayInbound" length="477975.16800000006" freespeed="122.72938487394958" capacity="3600.0" permlanes="1.0" oneway="1" modes="car,pt" />
+		<link id="TXLrunwayInbound" from="TXLrunwayInbound" to="TXLtaxiInbound" length="1500.0" freespeed="84.61538461538461" capacity="3600.0" permlanes="0.005" oneway="1" modes="car,pt" />
+		<link id="TXLrunwayOutbound" from="TXLtaxiOutbound" to="TXLrunwayOutbound" length="1500.0" freespeed="84.61538461538461" capacity="3600.0" permlanes="0.005" oneway="1" modes="car,pt" />
+		<link id="TXLtaxiInbound" from="TXLtaxiInbound" to="TXL" length="500.0" freespeed="5.555555555555555" capacity="3600.0" permlanes="1.0" oneway="1" modes="car,pt" />
+		<link id="TXLtaxiOutbound" from="TXLapron" to="TXLtaxiOutbound" length="500.0" freespeed="5.555555555555555" capacity="3600.0" permlanes="1.0" oneway="1" modes="car,pt" />
+	</links>
+
+<!-- ====================================================================== -->
+
+</network>

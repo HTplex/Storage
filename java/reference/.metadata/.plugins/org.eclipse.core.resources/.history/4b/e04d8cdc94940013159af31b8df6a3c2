@@ -1,0 +1,23 @@
+package graphic;
+import java.util.Scanner;
+import javax.swing.*;
+import java.awt.*;
+public class GraphicA07FontMetrics {
+	public static void main(String[]args){
+		JFrame a=new JFrame();
+		a.add(new message());
+		a.setDefaultCloseOperation(1);
+		a.setSize(400,400);
+		a.setLocationRelativeTo(null);
+		a.setVisible(true);
+	}
+}
+class message extends JPanel{
+	protected void paintComponent(Graphics g){
+		super.paintComponents(g);
+		FontMetrics fm=g.getFontMetrics();
+		int x=fm.stringWidth("My first FM");
+		int y=fm.getAscent();
+		g.drawString("My first FM", x, y);
+	}
+}
